@@ -1,0 +1,329 @@
+#!/usr/bin/env python3
+"""DJ BEHIX Radio - multi-station endless live stream server.
+
+Four shared live broadcasts (one per station), each from its own folder:
+  * Tracks play back-to-back in shuffled order, reshuffled every cycle.
+  * A cycle never repeats the previous order. The stream never ends.
+  * A listener who joins late joins mid-song, like a radio.
+  * Every track is transcoded live to MP3 128k so mixed sources form
+    one seamless byte stream.
+
+Stations (name -> music dir, from STATIONS env or defaults):
+  afro       /app/music-afro
+  nostalgia  /app/music-nostalgia
+  pop        /app/music-pop
+  gym        /app/music-gym
+
+Endpoints:
+  GET /stream/<station>       the endless MP3 stream for that station
+  GET /nowplaying/<station>   JSON: current track, elapsed, duration, listeners
+  GET /stream                 alias for /stream/afro (back-compat)
+  GET /nowplaying             alias for /nowplaying/afro (back-compat)
+  GET /health                 "ok"
+
+Config (env vars, all optional):
+  MUSIC_DIR_AFRO, MUSIC_DIR_NOSTALGIA, MUSIC_DIR_POP, MUSIC_DIR_GYM
+  PORT, HOST, BITRATE
+"""
+import json
+import os
+import queue
+import random
+import subprocess
+import threading
+import time
+from datetime import datetime, timezone
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+AUDIO_EXTS = {".mp3", ".ogg", ".oga", ".opus", ".m4a", ".flac", ".wav", ".aac"}
+CHUNK = 8192
+QUEUE_MAX = 128
+
+STATIONS = {
+    "afro": os.environ.get("MUSIC_DIR_AFRO", "/app/music-afro"),
+    "nostalgia": os.environ.get("MUSIC_DIR_NOSTALGIA", "/app/music-nostalgia"),
+    "pop": os.environ.get("MUSIC_DIR_POP", "/app/music-pop"),
+    "gym": os.environ.get("MUSIC_DIR_GYM", "/app/music-gym"),
+}
+
+# Hyphenated station ids some clients use -> canonical single-word id.
+ALIASES = {
+    "afro-house": "afro",
+    "pop-irani": "pop",
+    "nostalgia-irani": "nostalgia",
+    "nostalgia-ir": "nostalgia",
+    "gym-archive": "gym",
+}
+
+
+def log(msg):
+    print(f"[{datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+def probe_duration(path):
+    try:
+        out = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "csv=p=0", path],
+            capture_output=True, text=True, timeout=15,
+        )
+        return float(out.stdout.strip())
+    except Exception:
+        return None
+
+
+def list_tracks(music_dirs):
+    tracks = []
+    for d in music_dirs:
+        if not os.path.isdir(d):
+            continue
+        for name in sorted(os.listdir(d)):
+            path = os.path.join(d, name)
+            if os.path.isfile(path) and os.path.splitext(name)[1].lower() in AUDIO_EXTS:
+                tracks.append(path)
+    return tracks
+
+
+class Broadcaster:
+    def __init__(self, name, music_dirs, bitrate="128k", seed=None):
+        self.name = name
+        self.music_dirs = music_dirs
+        self.bitrate = bitrate
+        self.rng = random.Random(seed)
+        self.clients = set()
+        self.lock = threading.Lock()
+        self.current = {"track": None, "started_at": None, "duration": None}
+        self.track_count = 0
+        self._stop = threading.Event()
+
+    def register(self):
+        q = queue.Queue(maxsize=QUEUE_MAX)
+        with self.lock:
+            self.clients.add(q)
+        return q
+
+    def unregister(self, q):
+        with self.lock:
+            self.clients.discard(q)
+
+    def listener_count(self):
+        with self.lock:
+            return len(self.clients)
+
+    def _broadcast(self, data):
+        dead = []
+        with self.lock:
+            targets = list(self.clients)
+        for q in targets:
+            try:
+                q.put_nowait(data)
+            except queue.Full:
+                dead.append(q)
+        for q in dead:
+            self.unregister(q)
+
+    def _play_track(self, path):
+        name = os.path.basename(path)
+        duration = probe_duration(path)
+        self.current = {
+            "track": name,
+            "started_at": time.time(),
+            "duration": duration,
+        }
+        dur = f"{duration:.1f}s" if duration else "?"
+        log(f"[{self.name}] NOW PLAYING: {name} ({dur})")
+        cmd = [
+            "ffmpeg", "-re", "-v", "error", "-i", path,
+            "-vn", "-ac", "2", "-ar", "44100", "-b:a", self.bitrate,
+            "-f", "mp3", "-",
+        ]
+        proc = subprocess.Popen(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL
+        )
+        try:
+            while True:
+                chunk = proc.stdout.read(CHUNK)
+                if not chunk:
+                    break
+                self._broadcast(chunk)
+        finally:
+            if proc.poll() is None:
+                proc.kill()
+            proc.wait()
+
+    def run(self):
+        log(f"[{self.name}] broadcaster started (dir: {', '.join(self.music_dirs)})")
+        prev_path = None
+        while not self._stop.is_set():
+            tracks = list_tracks(self.music_dirs)
+            if not tracks:
+                log(f"[{self.name}] WARN: no audio files, retrying in 5s...")
+                time.sleep(5)
+                continue
+            self.track_count = len(tracks)
+            # Pick one random track at a time (never the same twice in a row),
+            # so the archive plays in a truly random order, never sequentially.
+            choices = [t for t in tracks if t != prev_path] or tracks
+            path = self.rng.choice(choices)
+            prev_path = path
+            log(f"[{self.name}] random pick: {os.path.basename(path)} "
+                f"(of {len(tracks)} tracks)")
+            try:
+                self._play_track(path)
+            except Exception as e:
+                log(f"[{self.name}] ERROR playing {os.path.basename(path)}: {e}")
+        log(f"[{self.name}] broadcaster stopped")
+
+
+def make_handler(broadcasters):
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, fmt, *args):
+            pass
+
+        def send_response(self, code, message=None):
+            super().send_response(code, message)
+            self.send_header("Access-Control-Allow-Origin", "*")
+
+        def do_OPTIONS(self):
+            self.send_response(204)
+            self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "*")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+
+        def _send_json(self, payload):
+            body = json.dumps(payload).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def _send_jsonp(self, payload, callback):
+            # JSONP: wraps the payload in a JS function call so a page can
+            # load it with a plain <script> tag (no fetch/XHR, no CORS).
+            safe = "".join(c for c in callback if c.isalnum() or c in "._")
+            if not safe:
+                return self._send_json(payload)
+            body = f"{safe}({json.dumps(payload)});".encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/javascript")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def _nowplaying_payload(self, b):
+            cur = b.current
+            elapsed = time.time() - cur["started_at"] if cur["started_at"] else 0
+            return {
+                "track": cur["track"],
+                "elapsed_seconds": round(elapsed, 1),
+                "duration_seconds": cur["duration"],
+                "listeners": b.listener_count(),
+                "tracks_in_playlist": b.track_count,
+            }
+
+        def do_GET(self):
+            raw = self.path
+            path = raw.split("?", 1)[0].rstrip("/")
+            query = raw.split("?", 1)[1] if "?" in raw else ""
+            callback = None
+            for part in query.split("&"):
+                if part.startswith("callback="):
+                    callback = part[len("callback="):]
+                    break
+            if path == "/health":
+                body = b"ok"
+                self.send_response(200)
+                self.send_header("Content-Type", "text/plain")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            if path in ("/stream", "/nowplaying"):
+                # back-compat aliases for Afro House
+                path = path + "/afro"
+            if path.startswith("/stream/"):
+                station = ALIASES.get(path[len("/stream/"):], path[len("/stream/"):])
+                b = broadcasters.get(station)
+                if b is None:
+                    self.send_response(404)
+                    self.end_headers()
+                    return
+                self._handle_stream(b)
+                return
+            if path.startswith("/nowplaying/"):
+                station = ALIASES.get(path[len("/nowplaying/"):], path[len("/nowplaying/"):])
+                b = broadcasters.get(station)
+                if b is None:
+                    self.send_response(404)
+                    self.end_headers()
+                    return
+                payload = self._nowplaying_payload(b)
+                if callback:
+                    self._send_jsonp(payload, callback)
+                else:
+                    self._send_json(payload)
+                return
+            if path in ("", "/index.html"):
+                body = b"DJ BEHIX Radio - multi-station stream server"
+                self.send_response(200)
+                self.send_header("Content-Type", "text/plain")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+                return
+            self.send_response(404)
+            self.end_headers()
+
+        def _handle_stream(self, b):
+            q = b.register()
+            log(f"[{b.name}] client connected ({b.listener_count()} listeners)")
+            self.send_response(200)
+            self.send_header("Content-Type", "audio/mpeg")
+            self.send_header("Cache-Control", "no-cache")
+            self.send_header("Connection", "keep-alive")
+            self.send_header("X-Now-Playing", str(b.current["track"] or ""))
+            self.end_headers()
+            try:
+                while True:
+                    try:
+                        chunk = q.get(timeout=1)
+                    except queue.Empty:
+                        continue
+                    try:
+                        self.wfile.write(chunk)
+                        self.wfile.flush()
+                    except (BrokenPipeError, ConnectionResetError):
+                        break
+            finally:
+                b.unregister(q)
+                log(f"[{b.name}] client disconnected ({b.listener_count()} listeners)")
+
+    return Handler
+
+
+def main():
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", "8000"))
+    bitrate = os.environ.get("BITRATE", "128k")
+    broadcasters = {}
+    for name, music_dir in STATIONS.items():
+        b = Broadcaster(name, [music_dir], bitrate=bitrate)
+        broadcasters[name] = b
+        t = threading.Thread(target=b.run, daemon=True)
+        t.start()
+    server = ThreadingHTTPServer((host, port), make_handler(broadcasters))
+    log(f"listening on http://{host}:{port} stations: {', '.join(broadcasters)}")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        for b in broadcasters.values():
+            b._stop.set()
+        server.shutdown()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,30 @@
+001|Googoosh|Pol
+002|Googoosh|Gharibe Ashena
+003|Googoosh|Kooh
+004|Googoosh|Makhlough
+005|Googoosh|Do Panjereh
+006|Googoosh|Hamsafar
+007|Googoosh|Nagoo Bedroud
+008|Googoosh|Hejrat
+009|Googoosh|Mordab
+010|Googoosh|Man Aamadeh-Am
+011|Googoosh|Gole Bee Goldoon
+012|Googoosh|Parandeh
+013|Googoosh|Bigharar
+014|Googoosh|Khaabam Yaa Bidaaram
+015|Googoosh|Kavir
+016|Googoosh|Bavar Kon
+017|Googoosh|Fasleh Tazeh
+018|Googoosh|Noghteye Payan
+019|Googoosh|Mano Tou
+020|Googoosh|Marham
+021|Googoosh|Maah Pishooni
+022|Googoosh|Ajab Jaai
+023|Googoosh|E'jaz
+024|Googoosh|Talagh
+025|Googoosh|Mano Gonjishkaye Khooneh
+026|Googoosh|Nemiad
+027|Pink Martini, Googoosh|Sahelo Darya
+028|Googoosh|Pishkesh
+029|Googoosh|Eshgh
+030|Googoosh|Ki Midooneh Chi Pish Miad
