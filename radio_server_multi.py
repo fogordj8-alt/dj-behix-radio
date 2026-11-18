@@ -17,9 +17,17 @@ Stations (name -> music dir, from STATIONS env or defaults):
 Endpoints:
   GET /stream/<station>       the endless MP3 stream for that station
   GET /nowplaying/<station>   JSON: current track, elapsed, duration, listeners
+  GET /status                 JSON: per-station + overall download progress
   GET /stream                 alias for /stream/afro (back-compat)
   GET /nowplaying             alias for /nowplaying/afro (back-compat)
   GET /health                 "ok"
+
+Tracks are downloaded at RUNTIME by a background thread per station
+(yt-dlp from the same track lists), NOT at build time: Railway kills
+builds after ~20 min, far too short for 2,247 tracks. The build only
+installs tools and copies code, so it finishes in ~1-2 min. Newly
+downloaded tracks join the rotation automatically because each
+broadcaster re-scans its music dir on every pick.
 
 Config (env vars, all optional):
   MUSIC_DIR_AFRO, MUSIC_DIR_NOSTALGIA, MUSIC_DIR_POP, MUSIC_DIR_GYM
@@ -54,6 +62,84 @@ ALIASES = {
     "nostalgia-ir": "nostalgia",
     "gym-archive": "gym",
 }
+
+# Track lists (copied into the image) -> (list file, search suffix).
+TRACKS_DIR = os.environ.get("TRACKS_DIR", "/app")
+TRACK_LISTS = {
+    "afro": ("afro-tracks.txt", "Afro House"),
+    "nostalgia": ("nostalgia-tracks.txt", ""),
+    "pop": ("pop-tracks.txt", ""),
+    "gym": ("gym-tracks.txt", ""),
+}
+
+DOWNLOAD_PROGRESS = {
+    name: {"total": 0, "downloaded": 0, "failed": 0, "current": None}
+    for name in STATIONS
+}
+
+
+def download_station(name, music_dir, list_file, suffix):
+    """Background thread: fetch every missing track of one station.
+
+    Skips files that already exist (so restarts and volume persistence
+    resume instead of re-downloading). One bad track never blocks the
+    queue: it is logged as FAILED and the loop moves on.
+    """
+    prog = DOWNLOAD_PROGRESS[name]
+    path = os.path.join(TRACKS_DIR, list_file)
+    if not os.path.isfile(path):
+        log(f"[{name}] downloader: list file {path} not found, skipping")
+        return
+    os.makedirs(music_dir, exist_ok=True)
+    entries = []
+    with open(path, encoding="utf-8", errors="replace") as f:
+        for line in f:
+            line = line.strip()
+            if not line or "|" not in line:
+                continue
+            nn, artist, title = line.split("|", 2)
+            entries.append((nn.strip(), artist.strip(), title.strip()))
+    prog["total"] = len(entries)
+    for nn, artist, title in entries:
+        dest = os.path.join(music_dir, f"{nn} - {artist} - {title}.mp3")
+        if os.path.isfile(dest) and os.path.getsize(dest) > 0:
+            prog["downloaded"] += 1
+    log(f"[{name}] downloader: {prog['downloaded']}/{prog['total']} already on disk")
+    for nn, artist, title in entries:
+        dest = os.path.join(music_dir, f"{nn} - {artist} - {title}.mp3")
+        if os.path.isfile(dest) and os.path.getsize(dest) > 0:
+            continue
+        query = f"{artist} {title} {suffix}".strip()
+        prog["current"] = f"{artist} - {title}"
+        ok = False
+        for _attempt in (1, 2):
+            try:
+                r = subprocess.run(
+                    ["yt-dlp", "-x", "--audio-format", "mp3",
+                     "--audio-quality", "128K", "-o", dest,
+                     f"ytsearch1:{query}"],
+                    capture_output=True, text=True, timeout=300,
+                )
+                if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
+                    ok = True
+                    break
+            except Exception:
+                pass
+            try:
+                os.remove(dest)
+            except OSError:
+                pass
+            time.sleep(2)
+        if ok:
+            prog["downloaded"] += 1
+            log(f"[{name}] downloaded {nn}: {artist} - {title} "
+                f"({prog['downloaded']}/{prog['total']})")
+        else:
+            prog["failed"] += 1
+            log(f"[{name}] FAILED {nn}: {artist} - {title}")
+        prog["current"] = None
+    log(f"[{name}] downloader: DONE {prog['downloaded']}/{prog['total']} "
+        f"({prog['failed']} failed)")
 
 
 def log(msg):
@@ -240,6 +326,32 @@ def make_handler(broadcasters):
                 self.end_headers()
                 self.wfile.write(body)
                 return
+            if path == "/status":
+                stations = {}
+                total_all = 0
+                done_all = 0
+                for sname, b in broadcasters.items():
+                    p = DOWNLOAD_PROGRESS[sname]
+                    stations[sname] = {
+                        "total": p["total"],
+                        "downloaded": p["downloaded"],
+                        "failed": p["failed"],
+                        "current": p["current"],
+                        "tracks_on_disk": b.track_count,
+                    }
+                    total_all += p["total"]
+                    done_all += p["downloaded"]
+                payload = {
+                    "stations": stations,
+                    "total_tracks": total_all,
+                    "downloaded_tracks": done_all,
+                    "percent": round(100.0 * done_all / total_all, 1) if total_all else 0,
+                }
+                if callback:
+                    self._send_jsonp(payload, callback)
+                else:
+                    self._send_json(payload)
+                return
             if path in ("/stream", "/nowplaying"):
                 # back-compat aliases for Afro House
                 path = path + "/afro"
@@ -312,6 +424,17 @@ def main():
         b = Broadcaster(name, [music_dir], bitrate=bitrate)
         broadcasters[name] = b
         t = threading.Thread(target=b.run, daemon=True)
+        t.start()
+    # Runtime downloads: one background thread per station fetches the
+    # missing tracks from the track lists. The stream starts at once
+    # with whatever is on disk and grows as downloads land.
+    for name, music_dir in STATIONS.items():
+        list_file, suffix = TRACK_LISTS[name]
+        t = threading.Thread(
+            target=download_station,
+            args=(name, music_dir, list_file, suffix),
+            daemon=True,
+        )
         t.start()
     server = ThreadingHTTPServer((host, port), make_handler(broadcasters))
     log(f"listening on http://{host}:{port} stations: {', '.join(broadcasters)}")
