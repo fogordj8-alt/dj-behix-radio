@@ -78,13 +78,21 @@ DOWNLOAD_PROGRESS = {
 }
 
 
-def download_station(name, music_dir, list_file, suffix):
+def download_station(name, music_dir, list_file, suffix, initial_delay=0):
     """Background thread: fetch every missing track of one station.
 
     Skips files that already exist (so restarts and volume persistence
     resume instead of re-downloading). One bad track never blocks the
-    queue: it is logged as FAILED and the loop moves on.
+    queue: it is logged as FAILED and the loop moves on. After a full
+    pass, the thread waits and retries the missing tracks: YouTube
+    rate-limits bursts of searches, so failed tracks usually succeed
+    on a later pass once the block lifts. Downloads are paced
+    (DOWNLOAD_DELAY_SECONDS between tracks, default 8s) and the four
+    stations start staggered so the first burst does not trip the
+    rate limit again.
     """
+    if initial_delay:
+        time.sleep(initial_delay)
     prog = DOWNLOAD_PROGRESS[name]
     path = os.path.join(TRACKS_DIR, list_file)
     if not os.path.isfile(path):
@@ -100,46 +108,57 @@ def download_station(name, music_dir, list_file, suffix):
             nn, artist, title = line.split("|", 2)
             entries.append((nn.strip(), artist.strip(), title.strip()))
     prog["total"] = len(entries)
-    for nn, artist, title in entries:
-        dest = os.path.join(music_dir, f"{nn} - {artist} - {title}.mp3")
-        if os.path.isfile(dest) and os.path.getsize(dest) > 0:
-            prog["downloaded"] += 1
-    log(f"[{name}] downloader: {prog['downloaded']}/{prog['total']} already on disk")
-    for nn, artist, title in entries:
-        dest = os.path.join(music_dir, f"{nn} - {artist} - {title}.mp3")
-        if os.path.isfile(dest) and os.path.getsize(dest) > 0:
-            continue
-        query = f"{artist} {title} {suffix}".strip()
-        prog["current"] = f"{artist} - {title}"
-        ok = False
-        for _attempt in (1, 2):
-            try:
-                r = subprocess.run(
-                    ["yt-dlp", "-x", "--audio-format", "mp3",
-                     "--audio-quality", "128K", "-o", dest,
-                     f"ytsearch1:{query}"],
-                    capture_output=True, text=True, timeout=300,
-                )
-                if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
-                    ok = True
-                    break
-            except Exception:
-                pass
-            try:
-                os.remove(dest)
-            except OSError:
-                pass
-            time.sleep(2)
-        if ok:
-            prog["downloaded"] += 1
-            log(f"[{name}] downloaded {nn}: {artist} - {title} "
-                f"({prog['downloaded']}/{prog['total']})")
+    delay = float(os.environ.get("DOWNLOAD_DELAY_SECONDS", "8"))
+    retry_wait = float(os.environ.get("DOWNLOAD_RETRY_SECONDS", "600"))
+    while True:
+        prog["downloaded"] = 0
+        prog["failed"] = 0
+        for nn, artist, title in entries:
+            dest = os.path.join(music_dir, f"{nn} - {artist} - {title}.mp3")
+            if os.path.isfile(dest) and os.path.getsize(dest) > 0:
+                prog["downloaded"] += 1
+                continue
+            query = f"{artist} {title} {suffix}".strip()
+            prog["current"] = f"{artist} - {title}"
+            ok = False
+            err = ""
+            for _attempt in (1, 2):
+                try:
+                    r = subprocess.run(
+                        ["yt-dlp", "-x", "--audio-format", "mp3",
+                         "--audio-quality", "128K", "-o", dest,
+                         f"ytsearch1:{query}"],
+                        capture_output=True, text=True, timeout=300,
+                    )
+                    if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
+                        ok = True
+                        break
+                    if r.stderr:
+                        lines = [l for l in r.stderr.strip().splitlines() if l.strip()]
+                        err = lines[-1][:200] if lines else ""
+                except Exception as e:
+                    err = str(e)[:200]
+                try:
+                    os.remove(dest)
+                except OSError:
+                    pass
+                time.sleep(2)
+            if ok:
+                prog["downloaded"] += 1
+                log(f"[{name}] downloaded {nn}: {artist} - {title} "
+                    f"({prog['downloaded']}/{prog['total']})")
+            else:
+                prog["failed"] += 1
+                log(f"[{name}] FAILED {nn}: {artist} - {title} {err}")
+            prog["current"] = None
+            time.sleep(delay)
+        log(f"[{name}] downloader: pass done {prog['downloaded']}/{prog['total']} "
+            f"({prog['failed']} failed)")
+        if prog["downloaded"] >= prog["total"]:
+            # List complete; re-check hourly in case the list grows.
+            time.sleep(3600)
         else:
-            prog["failed"] += 1
-            log(f"[{name}] FAILED {nn}: {artist} - {title}")
-        prog["current"] = None
-    log(f"[{name}] downloader: DONE {prog['downloaded']}/{prog['total']} "
-        f"({prog['failed']} failed)")
+            time.sleep(retry_wait)
 
 
 def log(msg):
@@ -427,12 +446,14 @@ def main():
         t.start()
     # Runtime downloads: one background thread per station fetches the
     # missing tracks from the track lists. The stream starts at once
-    # with whatever is on disk and grows as downloads land.
-    for name, music_dir in STATIONS.items():
+    # with whatever is on disk and grows as downloads land. Threads
+    # start staggered (20s apart) so the first search burst does not
+    # trip YouTube's rate limit.
+    for i, (name, music_dir) in enumerate(STATIONS.items()):
         list_file, suffix = TRACK_LISTS[name]
         t = threading.Thread(
             target=download_station,
-            args=(name, music_dir, list_file, suffix),
+            args=(name, music_dir, list_file, suffix, i * 20),
             daemon=True,
         )
         t.start()
