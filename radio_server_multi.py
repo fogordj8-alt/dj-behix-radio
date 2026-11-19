@@ -58,9 +58,9 @@ STATIONS = {
 # service per station). Comma-separated; default is all stations.
 _wanted = os.environ.get("STATIONS")
 if _wanted:
- _keep = {s.strip() for s in _wanted.split(",") if s.strip() in STATIONS}
- if _keep:
-  STATIONS = {name: d for name, d in STATIONS.items() if name in _keep}
+    _keep = {s.strip() for s in _wanted.split(",") if s.strip() in STATIONS}
+    if _keep:
+        STATIONS = {name: d for name, d in STATIONS.items() if name in _keep}
 
 # Hyphenated station ids some clients use -> canonical single-word id.
 ALIASES = {
@@ -79,12 +79,13 @@ TRACK_LISTS = {
     "pop": ("pop-tracks.txt", ""),
     "gym": ("gym-tracks.txt", ""),
 }
- # Optional per-station list override, e.g. LIST_FILE_NOSTALGIA=nostalgia-b-tracks.txt
+
+# Optional per-station list override, e.g. LIST_FILE_NOSTALGIA=nostalgia-b-tracks.txt
 # (lets one station's list be split across two services).
 for _name in list(TRACK_LISTS):
-     _override = os.environ.get("LIST_FILE_" + _name.upper())
-     if _override:
-              TRACK_LISTS[_name] = (_override, TRACK_LISTS[_name][1])
+    _override = os.environ.get("LIST_FILE_" + _name.upper())
+    if _override:
+        TRACK_LISTS[_name] = (_override, TRACK_LISTS[_name][1])
 
 DOWNLOAD_PROGRESS = {
     name: {"total": 0, "downloaded": 0, "failed": 0, "current": None}
@@ -136,27 +137,41 @@ def download_station(name, music_dir, list_file, suffix, initial_delay=0):
             prog["current"] = f"{artist} - {title}"
             ok = False
             err = ""
-            for _attempt in (1, 2):
-                try:
-                    r = subprocess.run(
-                        ["yt-dlp", "-x", "--audio-format", "mp3",
-                         "--audio-quality", "128K", "-o", dest,
-                         f"ytsearch1:{query}"],
-                        capture_output=True, text=True, timeout=300,
-                    )
-                    if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
-                        ok = True
-                        break
-                    if r.stderr:
-                        lines = [l for l in r.stderr.strip().splitlines() if l.strip()]
-                        err = lines[-1][:200] if lines else ""
-                except Exception as e:
-                    err = str(e)[:200]
-                try:
-                    os.remove(dest)
-                except OSError:
-                    pass
-                time.sleep(2)
+            # Source chain: YouTube via the android player client
+            # first (it bypasses the "Sign in to confirm you're not
+            # a bot" block that hits datacenter IPs), then YouTube
+            # web client, then SoundCloud as a last resort (some
+            # tracks are DRM-blocked or missing there).
+            sources = [
+                (["--extractor-args", "youtube:player_client=android"],
+                 f"ytsearch1:{query}"),
+                ([], f"ytsearch1:{query}"),
+                ([], f"scsearch1:{query}"),
+            ]
+            for extra_args, search in sources:
+                if ok:
+                    break
+                for _attempt in (1, 2):
+                    try:
+                        r = subprocess.run(
+                            ["yt-dlp", "-x", "--audio-format", "mp3",
+                             "--audio-quality", "128K", "-o", dest,
+                             *extra_args, search],
+                            capture_output=True, text=True, timeout=300,
+                        )
+                        if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
+                            ok = True
+                            break
+                        if r.stderr:
+                            lines = [l for l in r.stderr.strip().splitlines() if l.strip()]
+                            err = lines[-1][:200] if lines else ""
+                    except Exception as e:
+                        err = str(e)[:200]
+                    try:
+                        os.remove(dest)
+                    except OSError:
+                        pass
+                    time.sleep(2)
             if ok:
                 prog["downloaded"] += 1
                 log(f"[{name}] downloaded {nn}: {artist} - {title} "
