@@ -526,3 +526,28 @@
 1069|Homayra|Dah Bahar
 1070|Homayra|Aziztarin
 1071|Homayra|Sargardoon
+1072|Pouran|Tanha
+1073|Pouran|Ashke Mara Ta Key Tamasha Mikoni
+1074|Pouran|Az To Gozashtam
+1075|Pouran|Sokoot
+1076|Pouran|Asir
+1077|Pouran|Shabhaye Entezar
+1078|Viguen|Tanhaee
+1079|Viguen|Jaye Tou Khali
+1080|Viguen|Akharin Didar
+1081|Viguen|Cheshmane Geryoon
+1082|Viguen|Khazan
+1083|Delkash|Par Baste
+1084|Delkash|Del-e Ghafe
+1085|Marzieh|Barane Gham
+1086|Marzieh|Vadeh Kardi
+1087|Marzieh|Ranje Hasti
+1088|Mahasti|Ghaminamo Tanha
+1089|Mahasti|Bastare Gham
+1090|Mahasti|Ashegh Shodan Bihaseleh
+1091|Hayedeh|Man Khodam Raftaniam
+1092|Hayedeh|Bakhshesh
+1093|Aref|Tora Ba Digari Didam
+1094|Aref|Chera Amadi
+1095|Sattar|Bastare Tanhayee
+1096|Sattar|Gham Nameh
