@@ -142,12 +142,29 @@ def download_station(name, music_dir, list_file, suffix, initial_delay=0):
             # a bot" block that hits datacenter IPs), then YouTube
             # web client, then SoundCloud as a last resort (some
             # tracks are DRM-blocked or missing there).
-            sources = [
-                (["--extractor-args", "youtube:player_client=android"],
-                 f"ytsearch1:{query}"),
-                ([], f"ytsearch1:{query}"),
-                ([], f"scsearch1:{query}"),
-            ]
+            # Nostalgia must be ORIGINAL versions only (no remixes) — user rule.
+            # Pop may include remixes. Afro/Gym are DJ music (remixes normal).
+            allow_remix = name != "nostalgia"
+            if allow_remix:
+                sources = [
+                    (["--extractor-args", "youtube:player_client=android"],
+                     f"ytsearch1:{query}"),
+                    ([], f"ytsearch1:{query}"),
+                    ([], f"scsearch1:{query}"),
+                ]
+            else:
+                # No-remix: search returns 5 candidates and yt-dlp skips
+                # any whose title contains "remix", so the first
+                # non-remix (original) result is downloaded instead.
+                sources = [
+                    (["--extractor-args", "youtube:player_client=android",
+                      "--reject-title", "(?i)remix"],
+                     f"ytsearch5:{query}"),
+                    (["--reject-title", "(?i)remix"],
+                     f"ytsearch5:{query}"),
+                    (["--reject-title", "(?i)remix"],
+                     f"scsearch5:{query}"),
+                ]
             for extra_args, search in sources:
                 if ok:
                     break
