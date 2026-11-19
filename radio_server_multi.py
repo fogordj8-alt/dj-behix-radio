@@ -79,6 +79,12 @@ TRACK_LISTS = {
     "pop": ("pop-tracks.txt", ""),
     "gym": ("gym-tracks.txt", ""),
 }
+ # Optional per-station list override, e.g. LIST_FILE_NOSTALGIA=nostalgia-b-tracks.txt
+# (lets one station's list be split across two services).
+for _name in list(TRACK_LISTS):
+     _override = os.environ.get("LIST_FILE_" + _name.upper())
+     if _override:
+              TRACK_LISTS[_name] = (_override, TRACK_LISTS[_name][1])
 
 DOWNLOAD_PROGRESS = {
     name: {"total": 0, "downloaded": 0, "failed": 0, "current": None}
