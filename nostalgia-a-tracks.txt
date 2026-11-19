@@ -1,0 +1,500 @@
+001|Googoosh|Pol
+002|Googoosh|Gharibe Ashena
+003|Googoosh|Kooh
+004|Googoosh|Makhlough
+005|Googoosh|Do Panjereh
+006|Googoosh|Hamsafar
+007|Googoosh|Nagoo Bedroud
+008|Googoosh|Hejrat
+009|Googoosh|Mordab
+010|Googoosh|Man Aamadeh-Am
+011|Googoosh|Gole Bee Goldoon
+012|Googoosh|Parandeh
+013|Googoosh|Bigharar
+014|Googoosh|Khaabam Yaa Bidaaram
+015|Googoosh|Kavir
+016|Googoosh|Bavar Kon
+017|Googoosh|Fasleh Tazeh
+018|Googoosh|Noghteye Payan
+019|Googoosh|Mano Tou
+020|Googoosh|Marham
+021|Googoosh|Maah Pishooni
+022|Googoosh|Ajab Jaai
+023|Googoosh|E'jaz
+024|Googoosh|Talagh
+025|Googoosh|Mano Gonjishkaye Khooneh
+026|Googoosh|Nemiad
+027|Pink Martini, Googoosh|Sahelo Darya
+028|Googoosh|Pishkesh
+029|Googoosh|Eshgh
+030|Googoosh|Ki Midooneh Chi Pish Miad
+031|Googoosh|Ma'Shoogh
+032|Googoosh|Kaj Kola Khan
+033|Googoosh|Sedaghat
+034|Googoosh|Mano Gonjishka
+035|Googoosh|Ahouye Eshgh
+036|Googoosh|Bemoon Ta Bemoonam
+037|Googoosh|Komakam Kon
+038|Behrad Aria, Googoosh|Do Panjareh
+039|Googoosh|Negah
+040|Googoosh|Baraaye Man
+041|Googoosh|Dou Panjereh
+042|Behrad Aria, Googoosh|Man o Gonjeshkaye Khooneh
+043|Googoosh|Delkook
+044|Behrad Aria, Googoosh, Hasan Shamaeizadeh|Mordab
+045|Googoosh|Hala Bavar Bekonam
+046|Behrad Aria, Googoosh|Bavar Kon
+047|Googoosh|Behesht
+048|Googoosh|Nafas
+049|Googoosh|Sekeh Khorshid
+050|Moein|Paricheh
+051|Siavash Ghomayshi, Moein|Parandeh
+052|Moein|Tannaz
+053|Moein|Khalegh
+054|Moein|Eshghe Moondegar
+055|Moein|Safar
+056|Moein|Bahaneh
+057|Moein|Tolou
+058|Moein|Hamdam
+059|Moein|Naji
+060|Moein|Zendegi Ba Tou
+061|Moein|Sharab
+062|Moein|Majnoon
+063|Moein|Man Az Rah Oumadam
+064|Moein|Sobhet Bekheyr
+065|Moein|Naneh
+066|Moein|Moments (Lahzeha)
+067|Moein|Gozashteh
+068|Moein, Hayedeh, Shahram|Halghe Tala (Moein)
+069|Moein|Molaghat
+070|Moein|Elaheh Naaz
+071|Moein|Kolle Donyami
+072|Moein|Az Dar Umad
+073|Moein|To Mage Ghalbe Mani
+074|Moein|Tanhaye Tanha
+075|Moein|Mardom
+076|Moein|Panjareh
+077|Moein|Tamana
+078|Moein|Tou Khoobi
+079|Moein|Ey Eshgh
+080|Moein|Bigharar
+081|Moein|Khooneh
+082|Moein|Eshghe Man
+083|Moein|Bot Parast
+084|Moein|Zalem
+085|Moein|Pareecheh
+086|Moein|Bavaram Kon
+087|Moein|Setareh
+088|Moein|Ghasam Nakhor
+089|Moein|Parvardegara
+090|Moein|Shomal
+091|Moein|Moama
+092|Moein|Be to Madyoonam
+093|Moein|Arbabe Vafa
+094|Moein|Roya
+095|Moein|Ama Nemisheh
+096|Moein|Faramoosham Nakon
+097|Moein|Jane Man
+098|Moein|Sayeh
+099|Moein|Maandegar
+100|Aref|Ki Behtar Az To
+101|Aref|Mojezeye Eshgh
+102|Aref|The Medley
+103|Aref|Eshghe Tou Nemimirad
+104|Aref|Soltane Ghalbha
+105|Aref|Gole Golkhooneh
+106|Behrad Aria, Aref|Bogzar ze Man
+107|Aref|Hala Khaili Direh
+108|Aref|Khabeh Setareh
+109|Andy, Leila Forouhar, Aref, Morteza, Kouros, Viguen, Sattar, Fataneh, Delaram|No Bahar
+110|Aref|Toofan
+111|Aref|Daryacheh Noor
+112|Aref|Hala Baz Dobareh Man
+113|Aref|Bargashte Mozhgan
+114|Behrad Aria, Aref|Daryacheh-e-Noor
+115|Aref|Ey Khoda - Radio Edit
+116|Aref|24 Saate
+117|Aref|Nasihat (Unplugged)
+118|Aref|Koochooloo
+119|Hayedeh, Aref|Negaham Kon
+120|Aref|Boghze Darya
+121|Aref|Ghasre Sadaf (Unplugged)
+122|Aref|Ey Del Ey Del
+123|Aref|Eshgh - Radio Edit
+124|Aref|Peeri
+125|Aref|Gole Aroos
+126|Aref|Yare Ke Boudi
+127|Aref|Ye Khooneh Daram
+128|Aref|Entezare Tou
+129|Aref|Mageh Na!
+130|Aref|Sarzamine Madari
+131|Aref|Bi To
+132|Aref|Baghe Baroon Zadeh
+133|Aref|Gole Shoorehzar (Unplugged)
+134|Aref|Aramesh
+135|Aref|Yaadvaareh
+136|Leila Forouhar, Aref|Khatereha
+137|Aref|Shahre Sokoot
+138|Aref|Kojaai?
+139|Aref|Lahzehaye Asheghaneh
+140|Googoosh, Aref, Hayedeh, Ramesh|Shahre Tehroon(Homayra)
+141|Aref|Hameh Chim Yar
+142|Aref, Googoosh|چرا نمیرقصی - جشن تولد شانزده سالگی گوگوش
+143|Aref|Marde Ghabileh
+144|Aref|Bebakhsh
+145|Aref|Sadeh Del
+146|Aref|Sarab
+147|Aref|Cheshme Namahram
+148|Ardalan Sarafshar, Anoushirvan Rohani, Aref|Entezar
+149|Aref|Majnoon
+150|Sattar|Gole Pooneh
+151|Sattar|Sedaye To
+152|Sattar|Shazdeh Khanoom
+153|Shahram Shabpareh, Sattar|Chejoori Begam
+154|Sattar|Chador Namaze Gol Goli
+155|Sattar|Sar Sepordeh
+156|Sattar|Salam
+157|Sattar|Bi Nazeer
+158|Sattar|Amoo Norooz
+159|Sattar|Hamsafar
+160|Sattar|Akharin Talash
+161|Sattar|Golpari
+162|Behrad Aria, Sattar, Hayedeh|Gol e Sang
+163|Sattar|Bahare Man Gozashteh Shayad
+164|Sattar|Gol Naz
+165|Sattar|Tak Khal
+166|Sattar|Aroosi
+167|Sattar|Asheghaneh
+168|Sattar|Ashegheh Khejalaty
+169|Sattar|Shahzadeh
+170|Sattar|Yousofe Gomgashteh
+171|Sattar|Khatereh
+172|Sattar|Baaj
+173|Sattar|Anshalah
+174|Sattar|Ashti
+175|Sattar|Sedaye Baroon
+176|Sattar|Falsafehe Eshgh
+177|Sattar|Che Ghashange Asheghi
+178|Sattar|Tekyegah
+179|Sattar|Pileh
+180|Sattar|Boloughe Setareh
+181|Sattar|Sarvenaz
+182|Sattar|Sepid Va Siah
+183|Sattar|Aziz Dordooneh
+184|Sattar|Kashky Shah Boodam
+185|Sattar|Yeganegi
+186|Sattar|Narafigh
+187|Sattar|Shahreh Gham
+188|Sattar|Tanha Naboudi
+189|Sattar|Gereftar
+190|Sattar|Khaak
+191|Sattar|Asal
+192|Sattar|Khaki
+193|Sattar|Ghadam Ranjeh
+194|Sattar|Manou Natarsoon
+195|Sattar|Tazim
+196|Sattar|Khat Bekesh
+197|Sattar|Ajab Sabri Khoda Darad
+198|Sattar|Hamvatan
+199|Siavash Ghomayshi|Golaye Pooneh
+200|Siavash Ghomayshi|Jazireh
+201|Siavash Ghomayshi|Navazesh
+202|Siavash Ghomayshi|Farangis
+203|Siavash Ghomayshi|Ghabe Shishei
+204|Siavash Ghomayshi|Alaki
+205|Siavash Ghomayshi|Ghoroob
+206|Siavash Ghomayshi|Bee Sarzamintar Az Baad
+207|Siavash Ghomayshi|Kalaafeh
+208|Siavash Ghomayshi|Taak
+209|Siavash Ghomayshi|Khastegiya
+210|Siavash Ghomayshi|Ashegh
+211|Siavash Ghomayshi|Yadegari
+212|Siavash Ghomayshi|Baghe Baroon Zadeh
+213|Siavash Ghomayshi|Khazoon
+214|Siavash Ghomayshi|Baazi
+215|Siavash Ghomayshi|Bi Khial
+216|Siavash Ghomayshi|Golo Tagarg
+217|Siavash Ghomayshi|Hekayat
+218|Siavash Ghomayshi|Tardid
+219|Siavash Ghomayshi|Bi To
+220|Siavash Ghomayshi|Teflaki
+221|Siavash Ghomayshi|Cheshm Entezar
+222|Siavash Ghomayshi|Sayeh
+223|Siavash Ghomayshi|Fereshteh
+224|Siavash Ghomayshi|Neghab
+225|Siavash Ghomayshi|Tabiat
+226|Siavash Ghomayshi|Ghorbat
+227|Siavash Ghomayshi|Masir
+228|Siavash Ghomayshi|Taghdim
+229|Siavash Ghomayshi|Tasavor Kon
+230|Siavash Ghomayshi|Parvaneh
+231|Siavash Ghomayshi|Khasteh Shodam
+232|Siavash Ghomayshi|Nakhoda
+233|Siavash Ghomayshi|Yade Man Bash
+234|Siavash Ghomayshi|Parseh
+235|Siavash Ghomayshi|Sarnevesht
+236|Siavash Ghomayshi|Ageh Tou Beri
+237|Siavash Ghomayshi|Panjereh
+238|Siavash Ghomayshi|Asal Banoo
+239|Siavash Ghomayshi|Setareh
+240|Siavash Ghomayshi|Akharin Nameh
+241|Siavash Ghomayshi|Booseye Baad
+242|Siavash Ghomayshi|Daryaye Maghreb
+243|Siavash Ghomayshi|Baroon
+244|Siavash Ghomayshi|Aadat
+245|Mahasti|Bia Benevisim
+246|Mahasti|Fadat Sham
+247|Mahasti|Shayad
+248|Mahasti|Tagh o Tagh
+249|Mahasti|Meykhoneh Be Sharab
+250|Mahasti|Labkhand
+251|Mahasti|Benevis
+252|Mahasti|Moones
+253|Mahasti|Jodaee
+254|Mahasti|Zendegi
+255|Anoushirvan Rohani, Mahasti|Dele Kuchulu
+256|Mahasti|Khabe Man
+257|Mahasti|Naro
+258|Mahasti|Donya
+259|Mahasti|Azizam
+260|Mahasti|Modara
+261|Mahasti|Ghamgin Va Tanha
+262|Mahasti|Az Khoda Khasteh
+263|Mahasti|Akharin Tabib
+264|Mahasti|Delam Tangeh
+265|Mahasti|Delam
+266|Mahasti|Taaneh
+267|Mahasti|Tamasha
+268|Mahasti|Mitarsam
+269|Mahasti|Baroone Ehsas
+270|Mahasti|Peymaneh
+271|Mahasti|Haghighat
+272|Mahasti|Asir
+273|Mahasti|Bi Tou Mimiram
+274|Mahasti|Harfaye Gashang
+275|Mahasti|Sayeh Eshgh
+276|Mahasti|Taghsire Toe Ast
+277|Mahasti|Ay Binava Del
+278|Mahasti|Ay Bahareh
+279|Mahasti|Havasbaz
+280|Mahasti|Ki Miad
+281|Mahasti|Hanouzam Dooset Daram
+282|Mahasti|Emtehan
+283|Mahasti|Ashena
+284|Mahasti|Hale Khoob
+285|Mahasti|Sedayat
+286|Mahasti|Hoseleh Asheghi Nadaram
+287|Anoushirvan Rohani, Mahasti|Ghomare Zendegi
+288|Mahasti|Tou Bezan Ta Man Beraghsam
+289|Mahasti|Masti
+290|Mahasti|Mosafer
+291|Mahasti|Dorangi
+292|Mahasti|Dooste Man
+293|Mahasti|Del Migeh Delbar Miad
+294|Mahasti|Veda Dar Oaj
+295|Hassan Shamaizadeh|Nagoo Nagoo
+296|Hassan Shamaizadeh|Bishtar Bishtar
+297|Hassan Shamaizadeh|Rotab (Bandari)
+298|Hassan Shamaizadeh|Dooset Daram Azizam
+299|Hassan Shamaizadeh|Zendeh Bad Eshgh
+300|Hassan Shamaizadeh|Dasteto Bezar Too Dastam
+301|Hassan Shamaizadeh|Yeh Dokhtar Daram Shah Nadareh
+302|Hassan Shamaizadeh|Gharibeh
+303|Hassan Shamaizadeh|Morvarid
+304|Hassan Shamaizadeh|Berkeh
+305|Hassan Shamaizadeh|Ba Tou Beedar Misham
+306|Hassan Shamaizadeh|Mordab
+307|Hassan Shamaizadeh|Zargari
+308|Hassan Shamaizadeh|Aroosi
+309|Hassan Shamaizadeh|Dokhtare Mardom
+310|Hassan Shamaizadeh|Man Tora Mikham
+311|Hassan Shamaizadeh|Hala Hala Ha
+312|Hassan Shamaizadeh|Golbarg
+313|Hassan Shamaizadeh|Damad
+314|Hassan Shamaizadeh|Jenagh
+315|Hassan Shamaizadeh|Naro Naro
+316|Hassan Shamaizadeh|Daro Va Kon Azizam
+317|Hassan Shamaizadeh|Ba'ad Az Tow
+318|Hassan Shamaizadeh|Yeki Bedadam Bereseh
+319|Hassan Shamaizadeh|Aroos Va Damad
+320|Hassan Shamaizadeh|Divar Moosh Dareh
+321|Googoosh, Hassan Shamaizadeh|MORDAB
+322|Hassan Shamaizadeh|Dava
+323|Hassan Shamaizadeh|Dasteto Halgheh Kon Bedore Gardanam
+324|Hassan Shamaizadeh|Chesmo Abroo
+325|Hassan Shamaizadeh|Nemisheh
+326|Hassan Shamaizadeh|Gharibe Ashena
+327|Hassan Shamaizadeh|Tavalode Eshgh
+328|Hassan Shamaizadeh|Ghogha
+329|Hassan Shamaizadeh|Chelcheleh
+330|Hassan Shamaizadeh|Do Panjareh
+331|Hassan Shamaizadeh|Aroom Aroom
+332|Hassan Shamaizadeh|Chin Chine Daman
+333|Hassan Shamaizadeh|Aghaghi
+334|Aref, Shakila, Hengameh, Helen, Hassan Shamaizadeh|IRAN
+335|Hassan Shamaizadeh|Mano To
+336|Hassan Shamaizadeh|Gol
+337|Hassan Shamaizadeh|Medley: Dokhtare Mardom, Ashegham, Halla Halla, Bishtaro Bishtar, Dokhtare Koli
+338|Googoosh, Hassan Shamaizadeh|Mosalas
+339|Hassan Shamaizadeh|Khosham Khosham
+340|Hassan Shamaizadeh|Parvaze Eshgh
+341|Hassan Shamaizadeh|Asheghe Khoozestan
+342|Viguen, Aref, Hassan Shamaizadeh, Andy, Kouros, Hassan Shojaee, Fataneh, Nahid, Morteza Aghili|Navide Norooz
+343|Hassan Shamaizadeh|Man Va Gonjeshkaye Khooneh
+344|Hassan Shamaizadeh|Pesaram
+345|Siavash|Dokhtar Irooni
+346|Susan Roshan|Kabootare Del
+347|Leila Forouhar|Yare Shirin
+348|Mansour|Cheshme Siah
+349|Andy & Kouros|Behesh Begoo
+350|Moein|Eshghe Moondegar
+351|Leila Forouhar|Ba Delam Ghahr Nakon
+352|Shahrum Kashani|Havas
+353|Siavash|Dokhtare Choopoon
+354|Shahram Solati|Shab Bekheir
+355|Black Cats, Kamran & Hooman|Haramsara
+356|Ebi|Ba Tou
+357|Ebi|Atreh Toh
+358|Ebi|Ghebleh
+359|Ebi|Madad Rangi
+360|Ebi|Harighe Sabz
+361|Ebi|Nazi Naz Kon
+362|Ebi|Khali
+363|Ebi|Shabzadeh
+364|Ebi|Derakht
+365|Ebi|Pooste Shir
+366|Ebi|Khanom Gol
+367|Ebi|Pichak
+368|Ebi|Masteh Cheshaat
+369|Ebi|Setarehaye Sorbi
+370|Ebi|Kee Ashkato Pak Mikoneh
+371|Ebi|Navazesh
+372|Ebi|Geryeh Nakon
+373|Ebi|Shekar
+374|Ebi|Hezaro Yek Shab
+375|Ebi|Begoo Ey Yar Begoo
+376|Ebi|Akharin Bar
+377|Ebi|Pichak
+378|Ebi|Delpoosh
+379|Ebi|Vaghti Tou Geryeh Mikoni
+380|Ebi|Donyaye Arezo
+381|Ebi|Tandis
+382|Ebi|Aasheghane
+383|Ebi|Gheseh Eshgh
+384|Ebi|Ghorbat
+385|Ebi|Kolbeh Man
+386|Ebi|Shoma
+387|Ebi|Delbar
+388|Ebi|Pol
+389|Ebi|Ye Mardi
+390|Ebi|Ye Aashegh
+391|Ebi|Khoda Ba Mast
+392|Ebi|Sedam Kardi
+393|Ebi|Hanaa Khanoom
+394|Ebi|Benivis
+395|Ebi|Jabeh Javaher
+396|Ebi|Gol Vajeh
+397|Ebi|Noono Paniro Sabzi
+398|Ebi|Cheezi Begoo
+399|Ebi|Sabad Sabad
+400|Ebi|Goriz
+401|Ebi|Abi
+402|Ebi|Baad o Bisheh
+403|Ebi|Baghe Boloor
+404|Ebi|Khab
+405|Ebi|Boghz
+406|Ebi|Behet Goftam
+407|Ebi|Jadehaye Narafte
+408|Ebi|Negaranet Misham
+409|Ebi|Shabe Niloofari
+410|Ebi|Lalehzaar
+411|Ebi|Khatoon
+412|Ebi|Tahamol Kon
+413|Ebi|Adat
+414|Ebi|Tolue Kon
+415|Ebi|Toe-ra Negah Mikonam
+416|Ebi|Asal
+417|Ebi|Delam Mikhaad
+418|Ebi|Khakestari
+419|Ebi|Borj
+420|Ebi|Geryeh Masti
+421|Shadmehr Aghili, Ebi|Royaye Ma
+422|Ebi, Shadmehr Aghili|Hamin Khoobe
+423|Ebi|Badbin
+424|Ebi|Raze Hamishegi
+425|Ebi|Jahaan Bedoone To
+426|Ebi|Aghaghi
+427|Ebi|Khaabam Ya Bidaaram
+428|Ebi|Ghased
+429|Ebi|MOHTAAJ
+430|Ebi|Shabe marde Tanha
+431|Ebi|Tapesh
+432|Ebi|Sayeh
+433|Hayedeh|Zendegi
+434|Hayedeh|Eshareh
+435|Hayedeh|Parishoon
+436|Hayedeh|Vay Behalesh
+437|Hayedeh|Soghati
+438|Hayedeh|Zamuneh
+439|Hayedeh|Shanehayat
+440|Hayedeh|To Ke Nisti
+441|Hayedeh|Afsaneh Hasty
+442|Hayedeh|Nameh
+443|Hayedeh|Saghi
+444|Hayedeh|Saghareh Hasti
+445|Hayedeh|Bezan Tar
+446|Hayedeh|Sogand
+447|Hayedeh|Vafayeh Del
+448|Hayedeh|Asireh Toe
+449|Hayedeh|Aalam E Yekrangee
+450|Hayedeh|Masti
+451|Hayedeh|Ey Zendegi Salam
+452|Hayedeh|Razeh Del
+453|Hayedeh|Shabeh Eyd
+454|Hayedeh|Asheghtarin
+455|Hayedeh|Badeh Forush
+456|Hayedeh|Gol Vajhe
+457|Hayedeh|Tou Negah Kon
+458|Hayedeh|Neshaneh
+459|Hayedeh|Shabeh Eshgh
+460|Hayedeh|Nargeseh Shiraz
+461|Hayedeh|Ravi
+462|Hayedeh|Nagoo Nemiyam
+463|Hayedeh|Shoorideh Sar
+464|Hayedeh|Yeki Ra Doost Midaram
+465|Hayedeh|Roozaaye Roshan
+466|Hayedeh|Sayeh Eshgh
+467|Hayedeh|Ki Midooneh
+468|Hayedeh|Aroosak
+469|Hayedeh|Ye Rooz
+470|Hayedeh|Siyah Cheshmoon
+471|Hayedeh|Tanha Ba Golha
+472|Hayedeh|Ashiyooneh
+473|Hayedeh|Asal Cheshm
+474|Hayedeh|Bahar Bahar
+475|Hayedeh|Zahre Jodaii
+476|Hayedeh|Sar Be Hava
+477|Hayedeh|Be Joz Khoda Kasi Nist
+478|Hayedeh|Vasat Mimordam
+479|Hayedeh|Tarikhe Eshgh
+480|Hayedeh|Dasthayeh To
+481|Hayedeh|Nemikham
+482|Hayedeh|Jadoo
+483|Hayedeh|Bahooneh
+484|Hayedeh|Ey Khoda
+485|Hayedeh|Dele Divooneh
+486|Hayedeh|Golhaye Sorkh
+487|Hayedeh|Hamkhooneh
+488|Hayedeh|Dashtestani
+489|Hayedeh|Inrooza
+490|Hayedeh|Nefrin
+491|Hayedeh|Ashko Ah
+492|Hayedeh|Goleh Kaghazi
+493|Hayedeh|Geryeh Amanam Nemideh
+494|Hayedeh|Ageh Beri Nefrin Mikonam
+495|Hayedeh|Avale Ashenaee (Bazm Version)
+496|Hayedeh|Azardeam
+497|Hayedeh|Avaz (Tanhatou-e)
+498|Anoushirvan Rohani, Molavi|Ey Yare Man (feat. Molavi)
+499|Anoushirvan Rohani|Gole Sang
+500|Dariush|Cheshme Man

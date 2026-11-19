@@ -1,0 +1,499 @@
+501|Dariush|Age Ye Rooz
+502|Dariush|Ey Eshgh
+503|Dariush|Shekanjegar
+504|Dariush|Shame Mahtab
+505|Dariush|Shirin Shirin
+506|Dariush|Gole Bita
+507|Dariush|Yaran
+508|Dariush|Soroudeh Afarinesh
+509|Dariush|Kohan Diyara
+510|Dariush|Narafigh
+511|Dariush|Khak'e Khasteh
+512|Dariush|Be Man Nagoo Dooset Daram
+513|Dariush|Yaavar
+514|Dariush|Bekhod Residan
+515|Dariush|Ali Konkoori
+516|Dariush|Shabkhoon
+517|Dariush|Talaafi
+518|Dariush|Deevar
+519|Dariush|Ey Eshgh
+520|Dariush|Soghoot
+521|Dariush|Booye Gandom
+522|Dariush|Rahgozare Omr
+523|Dariush|Vatan
+524|Dariush|Ejazeh
+525|Dariush|Khane Sorkh
+526|Dariush|Goftegoo Ba Del
+527|Dariush|Khamoosh Namirid
+528|Dariush|Dad Az In Del
+529|Dariush|Sogooth
+530|Shahram Shabpareh, Kamyar|To Mitooni
+531|Shahram Shabpareh|Khab
+532|Shahram Shabpareh|Golab
+533|Shahram Shabpareh|Khooneh
+534|Shahram Shabpareh|Vaveyla
+535|Shahram Shabpareh|Yareh Shirin Sokhanam
+536|Shahram Shabpareh|Vaveyla , Labe Karoon
+537|Shahram Shabpareh|Deyar - Folk Version
+538|Shahram Shabpareh|Baghe Alefba
+539|Shahram Shabpareh|Mademoiselle
+540|Shahram Shabpareh|Pariya
+541|Shahram Shabpareh|Daryacheye Nour
+542|Shahram Shabpareh|Yareh Bi Vafa
+543|Shahram Shabpareh|Doomad - New Version
+544|Shahram Shabpareh|Eshghe Tabestani
+545|Shahram Shabpareh|Mitooni
+546|Shahram Shabpareh, Shohreh, Andy, Kouros|Medley
+547|Shahram Shabpareh|Koocheh Beh Koocheh
+548|Shahram Shabpareh|Faseleh
+549|Shahram Shabpareh|Milad
+550|Shahram Shabpareh, Andy|Miyad
+551|Shahram Shabpareh|Naazi Jan, Chador Zari
+552|Shahram Shabpareh|Azizam
+553|Shahram Shabpareh|Madreseh
+554|Shahram Shabpareh|Kabootar
+555|Shahram Shabpareh|Amad Bahar
+556|Shahram Shabpareh|Parastesh
+557|Shahram Shabpareh|Yeganeh Sanam
+558|Shahram Shabpareh, Shohreh|Chera Rafti
+559|Shahram Shabpareh|Ghassam
+560|Shahram Shabpareh|Maah Az Kodoom Var Dar Umad
+561|Shahram Shabpareh, Shohreh|Ghesmat
+562|Shahram Shabpareh, Shohreh|Telesm
+563|Shahram Shabpareh, Leila Forouhar|Hamseda
+564|Shahram Shabpareh|Kodoom Shab
+565|Shahram Shabpareh|Mashghe Shabe Jomeh
+566|Shahram Shabpareh|Oun Kieh
+567|Shahram Shabpareh|Yavash Yavash
+568|Shahram Shabpareh|Del
+569|Shahram Shabpareh|Delam Tangeh
+570|Shahram Shabpareh|Do Rahi
+571|Shahram Shabpareh|Bigharar
+572|Shahram Shabpareh|Shaparak
+573|Shahram Shabpareh|Ravi
+574|Shahram Shabpareh|Sadeh
+575|Shahram Shabpareh|Mosafer
+576|Shahram Shabpareh|Didar
+577|Shahram Shabpareh|Chera Nemiraghsi, Zane Ziba, Baroon Barooneh
+578|Shahram Shabpareh|Lajbaz
+579|Leila Forouhar|Jooni Joonom
+580|Leila Forouhar|Yare Shirin
+581|Leila Forouhar|Del Ey Del - Alternate Version
+582|Leila Forouhar|Ba Tou
+583|Leila Forouhar|Pardis
+584|Leila Forouhar|Be Joone To
+585|Leila Forouhar|Kalaghayeh Khabar Cheen
+586|Leila Forouhar|Vadeh
+587|Leila Forouhar|Chee Seda Konam Toro
+588|Leila Forouhar|Bahaneh
+589|Leila Forouhar|Jolene
+590|Leila Forouhar|Janomeh (Afghani)
+591|Leila Forouhar|Zim Zim
+592|Leila Forouhar|Delam
+593|Leila Forouhar|Bahare Eshgh
+594|Leila Forouhar|Baazaar-E-Makkaareh
+595|Leila Forouhar|Eshghe Tazeh
+596|Leila Forouhar, Anoushirvan Rohani|Bahaneh
+597|Leila Forouhar|Do Parandeh
+598|Leila Forouhar|Ye Zarreh Del
+599|Leila Forouhar|Shamim
+600|Leila Forouhar|Kheili Douset Daram
+601|Leila Forouhar|Soltane Ghalbha
+602|Leila Forouhar|Shekveh
+603|Leila Forouhar|Beegharari
+604|Leila Forouhar|Mahe Man
+605|Leila Forouhar|Vaghti Beh Tou Miresam
+606|Leila Forouhar|Delbar
+607|Leila Forouhar|Shab
+608|Leila Forouhar|Eshgham
+609|Leila Forouhar|Yek Bouseh
+610|Leila Forouhar, Anoushirvan Rohani|Ghasam Be Tou
+611|Leila Forouhar|Viroon Beshi Ey Del
+612|Leila Forouhar|Ba Delam Ghahr Nakon - Extended
+613|Leila Forouhar|Kabootare Eshgh
+614|Googoosh, Leila Forouhar, Shahrzad Sepanlou, Sogand, Darya Dadvar|Dobareh
+615|Leila Forouhar|Makhmale Naz
+616|Leila Forouhar|Cheh Balaee Ey Del
+617|Leila Forouhar|Kalaghaye Khabarchin
+618|Leila Forouhar|Har Chi Bekhay
+619|Leila Forouhar|Baladi (Arabic)
+620|Leila Forouhar|Gole Man
+621|Leila Forouhar|Nagofteha
+622|Leila Forouhar|Nafasam
+623|Leila Forouhar|Roozegare Shirin
+624|Leila Forouhar|Asir
+625|Leila Forouhar|Dele Sadeh
+626|Homeyra|Aman Az Dard-E Doori
+627|Homeyra|Hamzaboonam Bash
+628|Homeyra|Dooreh Dooreh
+629|Homeyra|Khaterat Shomal
+630|Homeyra|Lahzeye Khodahafezi
+631|Homeyra|Alame Ashgh
+632|Homeyra|Didare Azizan
+633|Homeyra|Shahr O Diyar
+634|Homeyra|Mahtabe Eshgh
+635|Homeyra|Dele Divooneh
+636|Homeyra|Bekhand Be Rooye Donya
+637|Homeyra|Ashghtar Az Hamisheh
+638|Homeyra|Pele Pele
+639|Homeyra|Vaghti Ke Rafti
+640|Homeyra|Khoonamo Mikham
+641|Homeyra|Rasmeh Zamouneh
+642|Homeyra|Dele Ashegh
+643|Homeyra|Donya Donya
+644|Homeyra|Bare Digar
+645|Homeyra|Ghebleh Sojoud
+646|Homeyra|Bi Niazi
+647|Homeyra|Eneh Donya
+648|Homeyra|Shabhaye Kordestan
+649|Homeyra|Jodaee
+650|Homayra|Ahange Mohebat
+651|Homayra|Asire Gham
+652|Homayra|Tanha Nagozari
+653|Homayra|Maye Asheghaneh
+654|Homayra|Del Shekani Gonaheh
+655|Homayra|Mohabat
+656|Homayra|Digar Cheh Khahi
+657|Homayra|Ey Bahare Zendegi
+658|Homayra|Ba Dele Man
+659|Homayra|Khalvate Del
+660|Shohreh|Sedaye Pa
+661|Shohreh|Yare Nahzenin
+662|Shohreh|Dele Beh Gharar
+663|Shohreh|Dehrooz O Emrooz
+664|Shohreh|Maghsad
+665|Shohreh|Rosvaa
+666|Shohreh|Chera Rafti
+667|Shohreh|Gomshodeh
+668|Shohreh|Ghesmat
+669|Shohreh|Toloo
+670|Shohreh|Telesm
+671|Shohreh|Sheytoonak
+672|Shohreh|Naji
+673|Shohreh|Dele Khosh Bavar
+674|Shohreh|Ay Boteh Boteh
+675|Shohreh|Tou Keh Nisty
+676|Shohreh|Dokhtare Mashreghi
+677|Shohreh|Beshkan Beshkan
+678|Shohreh|Del Farangi
+679|Shohreh|Teshneh
+680|Shohreh|Arz Kardam
+681|Shohreh|Bemiram Ay Bemiram
+682|Shohreh|Agha
+683|Andy & Kouros|Atish
+684|Shohreh|Shab Sher
+685|Shohreh|Asemoon
+686|Shohreh|Sogoli
+687|Shohreh|Kalagheh Domsiah
+688|Shahram Shabpareh|Telesm Shahram & Shohreh
+689|Shamaizadeh|Be Ghorboonet Begardam
+690|Shohreh|Eshghe Aval
+691|Shohreh|Toyee
+692|Shohreh|Do Rangi
+693|Shohreh|Shekoofeh
+694|Shohreh|Gharibe Ashegh
+695|Shohreh|Havas
+696|Shohreh|Yavashaki
+697|Shohreh|Aksasho Pareh Kardam
+698|Shohreh|Dirooz O Emrooz
+699|Shohreh|Ayeneh
+700|Shohreh|Mageh Del Halishe
+701|Shohreh|Tab
+702|Shohreh|Del Negaran
+703|Farhad Mehrad|Koodakaneh
+704|Farhad Mehrad|Mard-e Tanha
+705|Farhad Mehrad|Katibeh
+706|Farhad Mehrad|I Believe To My Soul
+707|Farhad Mehrad|Ayeneha (Maskh)
+708|Farhad Mehrad|Najva
+709|Farhad Mehrad|Barf
+710|Farhad Mehrad|Solitary Man
+711|Farhad Mehrad|Shabaneh, Pt. 2
+712|Farhad Mehrad|Gonjeshkak
+713|Farhad Mehrad|Morgh-e Sahar
+714|Farhad Mehrad|The House of The Rising Sun
+715|Farhad Mehrad|Jomeh
+716|Farhad Mehrad|Windmills of Your Mind
+717|Farhad Mehrad|Robaiyat
+718|Farhad Mehrad|The World We Knew
+719|Farhad Mehrad|Asir-e Shab
+720|Farhad Mehrad|To Ra Doost Daram
+721|Farhad Mehrad|Gol-e Yakh
+722|Farhad Mehrad|You're just about to lose your clown
+723|Farhad Mehrad|Hafteye Khakestari
+724|Farhad Mehrad|Yesterday When I Was Young
+725|Farhad Mehrad|Vaghti Ke Bacheh Boodam
+726|Farhad Mehrad|Hey! That's No Way to Say Goodbye
+727|Farhad Mehrad|Sunrise, Sunset
+728|Farhad Mehrad|Where Can I Go Without
+729|Farhad Mehrad|Forbidden Games
+730|Farhad Mehrad|Intro
+731|Farhad Mehrad|Alone Again (Naturally)
+732|Farhad Mehrad|7 Rooms of Gloom
+733|Farhad Mehrad|Suzanne
+734|Farhad Mehrad|Handyman
+735|Farhad Mehrad|Sad Lisa
+736|Farhad Mehrad|Qui ?
+737|Farhad Mehrad|Unchain My Heart
+738|Farhad Mehrad|Romanian Song
+739|Farhad Mehrad|Famous Blue Raincoat
+740|Farhad Mehrad|Eleanor Rigby
+741|Farhad Mehrad|Everybody’s Talkin’
+742|Farhad Mehrad|Georgia on My Mind
+743|Farhad Mehrad|Come Down Jesus
+744|Farhad Mehrad|Take Five
+745|Farhad Mehrad|Let It Be
+746|Farhad Mehrad|Et moi dans mon coin
+747|Farhad Mehrad|Like a Sad Song
+748|Farhad Mehrad|Joshua Fit The Battle of Jericho
+749|Farhad Mehrad|Don’t Cry for Me Argentina
+750|Farhad Mehrad|I Call You Mister
+751|Marzieh|امشب شب مهتابه
+752|Marzieh|هرگز نمیشد باورم
+753|Marzieh, Homayoun Khorram|Ze Kooye Balakeshan
+754|Marzieh|Meyzadeh
+755|Banan, Marzieh|Booye Jooye Moolian - Radio Edit
+756|Marzieh|Taghatam Deh
+757|Marzieh|Sange Khara
+758|Marzieh|Bidade Zaman
+759|Marzieh|Migozaram Tanha
+760|Marzieh|Sarabe Arezoo
+761|Marzieh, Homayoun Khorram|Avaye Khaste Delan
+762|Marzieh, Homayoun Khorram|Bigonah
+763|Marzieh|Bia Bia Benshin
+764|Marzieh|Dar Fekre Tou Boodam
+765|Marzieh|Raftam Ke Raftam
+766|Marzieh|زان دم که تو رادیدم
+767|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Dast Be Dastmalam Nazan
+768|Marzieh, Homayoun Khorram|Shararehaye Javedani
+769|Marzieh|Khoda Koneh Keh Khabam Nabareh
+770|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh, Azize Delomi
+771|Marzieh|Didi Keh Rosva Shod Delam
+772|Marzieh|Dar Miane Golha
+773|Banan, Marzieh|Dast Be Dastmalom
+774|Marzieh|Gharghe Gonah
+775|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh & Moosighi
+776|Marzieh|Tavoos
+777|Marzieh|Avaze Del - 2023 Remastered Version
+778|Marzieh|Peyvande Golha
+779|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh
+780|Marzieh|Tanhaee
+781|Marzieh, Jalil Shahnaz|Mouyeh, Shekasteh Mouyeh (Farda Ke Khalayegh Ra Az Khak) - 2023 Remastered Version
+782|Marzieh|Gole Sepid
+783|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Chahar Mezrab
+784|Marzieh|Eshghe Soozan
+785|Marzieh|Zeman Ay Negaram Khabar Nadari
+786|Marzieh|Sobhe Omid
+787|Marzieh|Shab
+788|Marzieh|Arezoo - Extended
+789|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Avaz
+790|Marzieh|Raze Del
+791|Marzieh|Dokhtare Koli
+792|Marzieh, Parviz Yahaghi|Daramad Segah, Zabol (Man Asheghe Janbazam) - 2023 Remastered Version
+793|Marzieh|Sooze Del
+794|Marzieh|Eshghe Khod Hasha Makon
+795|Marzieh|Minaye Shekasteh
+796|Marzieh|Bahaneh Seyre Golo Sabzeh
+797|Marzieh|Jelveh Hasti
+798|Marzieh|Jashne Golha
+799|Marzieh|Saz-o Avaz, Pt. VI (Tark-e sharab kardam-o ...) - 2023 Remastered Version
+800|Marzieh|Ranje Zendegani
+801|Viguen, Delkash|Bordi Az Yadam
+802|Viguen, Delkash|Bordy Az Yadam - Ba Delkash
+803|Delkash|Omide Janam
+804|Delkash|Porsoon, Larzoon
+805|Delkash|Ashegham Man
+806|Delkash|Bazgashteh
+807|Delkash|Tanha Maneshin
+808|Delkash|Amad Nobahar
+809|Viguen, Delkash|Raghib
+810|Delkash|Ashofteh Hali
+811|Delkash|Bas Kon
+812|Delkash|Samare Golha
+813|Delkash|Amad Amad
+814|Delkash|Maktabe Vafa
+815|Delkash|Yade Man Kon
+816|Viguen, Delkash|Delam Mikhast
+817|Behrad Aria, Delkash|Ashegham Man
+818|Delkash|Saze Shekasteh
+819|Viguen, Delkash|Payam Be Ragib - Delkash
+820|Delkash|Beh Eshghe Tou Mastam
+821|Delkash|Safar Kardeh
+822|Delkash|Man Ghami Daram
+823|Delkash|Yadet Miad
+824|Delkash|Gerdbad
+825|Delkash|Naz Az Tou
+826|Delkash|Khandan Sho
+827|Delkash|Ta Hastam Bia
+828|Delkash|Kolbehe Ma
+829|Delkash|Atashe Carvan
+830|Delkash|Moj
+831|Delkash|Negaranam
+832|Delkash|Taraneh Maktabe Vafa
+833|Delkash|Saghi
+834|Delkash|Bekenaram Benshin
+835|Delkash|Gomrah
+836|Viguen, Delkash|Bigharar
+837|Delkash|Dashte Jonoon
+838|Delkash|Majeraye Zendegani
+839|Delkash|Yadam Kon
+840|Delkash|Tanhaee
+841|Delkash|Nashenas
+842|Delkash|Gole Khoshk
+843|Delkash|Begoo Keh Hasti Begoo
+844|Delkash|Pashiman Shodam
+845|Delkash|Cheh Bekhahi Cheh Nakhahi
+846|Delkash|Beh Kenaram Benshin
+847|Delkash|Raghse Koliha
+848|Delkash|Mehmanat Konam
+849|Delkash|Amadam
+850|Delkash|Migozaram
+851|Viguen|Shahdoomad
+852|Viguen|Chera Nemiraghsi
+853|Viguen, Delkash|Bordi Az Yadam
+854|Viguen, Pouran|Shaneh
+855|Viguen|Sari Gelin
+856|Viguen|Setareh
+857|Viguen|Chera Nemiraghsi
+858|Viguen|Shah Doomad
+859|Viguen|Baroon Barooneh
+860|Viguen|Parie Daryaee
+861|Viguen, Pouran|Atash Neshani
+862|Viguen|shokoufeha
+863|Viguen|Beyade Leili
+864|Viguen|Chera Nemiraghsi
+865|Viguen|Dele Divaneh
+866|Viguen, Delkash|Delam Mikhast
+867|Ramesh, Viguen|Gole Booseh
+868|Viguen|Mahtab
+869|Vigen|Mahtab
+870|Viguen, Pouran|Shane - Pouran
+871|Viguen|Raghib
+872|Viguen|Dele Divaneh
+873|Viguen|Yade To
+874|Viguen|Bandar
+875|Viguen|Sogand
+876|Vigen|Hamkhooneh (with Hayedeh)
+877|Vigen|Ashti (with Jaklin)
+878|Viguen|Asbe Ablagh som Tala
+879|Viguen|Elaheh Naz
+880|Viguen|Akh Delam Tangeh
+881|Vigen|Del E Ghafel
+882|Viguen|Baba Karam
+883|Viguen|Zann
+884|Viguen|Akh Joon
+885|Viguen|Baroun Baroune
+886|Viguen|Ghazaal
+887|Viguen|Kabke Vahshi
+888|Viguen|Kalaagh Par
+889|Viguen|Halgheye Gol
+890|Viguen|Ghahr O Ashti
+891|Viguen|Fenjaane Tala
+892|Viguen|Karvane Arous
+893|Viguen|Chra Nemiraghassy
+894|Viguen|Leili Manaal
+895|Viguen|Asbe Som Tala
+896|Viguen|Bikhabar Az Eshgh
+897|Viguen|Nisho Noosh
+898|Viguen|Yadegari
+899|Viguen|Geryehe Abr
+900|Viguen, Pouran|Sepideh Dam
+901|Viguen|Aroose Darya
+902|Viguen|Bi Saranjaam
+903|Viguen|Ahooye Farari
+904|Morteza|Baz Mano Kashti
+905|Morteza|Anar Anar
+906|Morteza|Dobareh Eshgh
+907|Morteza|Geleh
+908|Morteza|Khanoom Badesh Miad
+909|Morteza|Palangeh
+910|Morteza|Ghatar Ghatar
+911|Morteza|Del Beh Tou Bastam
+912|Morteza|Khaloo Khaloo
+913|Morteza|Shahre Farng
+914|Morteza|Ahoo
+915|Morteza|Sareto Bala Kon
+916|Morteza|Darse Eshgh
+917|Morteza|Chy Ghoft
+918|Morteza|Leili
+919|Morteza|Khal Ghezi
+920|Morteza|Dokhtare Agha
+921|Morteza|Majnoon
+922|Moein, Morteza, Andy, Kouros, Fataneh|Tanine Solh
+923|Morteza|Aroosi
+924|Morteza|Goftam Bechashm
+925|Morteza|Siah Gisoo
+926|Morteza|Fereshteh
+927|Morteza|Lalehzaar
+928|Morteza|Gole Sharab
+929|Morteza|Botparast - Safar
+930|Morteza|امشب
+931|Morteza|Ahanghaye Mahali - Medley
+932|Morteza|Yaram Laj Kardeh
+933|Morteza|Bacheye Khoozestan
+934|Morteza|Jang
+935|Morteza|Yaghin
+936|Morteza|Halaketam
+937|Morteza|Nafassat
+938|Morteza|Fereshtehe Nejat
+939|Morteza|Saheb
+940|Morteza|Daste Shoma Dard Nakoneh
+941|Morteza|Hamisheh Yaadet Baa Maneh
+942|Morteza|Malekeh Mashregh
+943|Morteza|Shab Jangeh
+944|Morteza|Jadouye Eshgh
+945|Morteza|Gol Agha
+946|Morteza|Himeh
+947|Morteza|Cheshm Badoomi
+948|Morteza|Sedaye Saz
+949|Morteza|Yade Iran
+950|Morteza|Sepasgozaar
+951|Morteza|Donyaye Rangi
+952|Morteza|Maykhaneh
+953|Faramarz Aslani|Age Yeh Rooz
+954|Faramarz Aslani, Mehran Abbasi|Age Ye Rooz Beri Safar - Mehran Abbasi Remix
+955|Faramarz Aslani, Babak Amini|Yar
+956|Faramarz Aslani|Hanooz (Romantic Version)
+957|Faramarz Aslani|Del Asireh
+958|Faramarz Aslani|Hold My Hand
+959|Faramarz Aslani, Babak Amini|To (My All)
+960|Faramarz Aslani|Yadist
+961|Faramarz Aslani|Aahooye Vahshi
+962|Faramarz Aslani|Castle Of Loneliness
+963|Faramarz Aslani, Babak Amini|Vaghti Rafti
+964|Behrad Aria, Faramarz Aslani|Midooni del Asire
+965|Faramarz Aslani|Shab
+966|ASADI, Erfan, Faramarz Aslani|Age Ye Rooz - Remix
+967|Faramarz Aslani, Babak Amini|Sedayam Kon
+968|Faramarz Aslani|Call My Name
+969|Faramarz Aslani|Divar
+970|Faramarz Aslani|Hanooz (Rhythmic Version)
+971|Faramarz Aslani, Babak Amini|Historia de un Amor
+972|Faramarz Aslani|Days Of Song And Sorrow
+973|Faramarz Aslani|Darigh
+974|Faramarz Aslani|Seven Cities Of Love
+975|Faramarz Aslani, Babak Amini|Chekeh
+976|Faramarz Aslani|The Migrant Birds
+977|Faramarz Aslani|Golandam
+978|Faramarz Aslani|No One
+979|Faramarz Aslani|Zolfe Ashofteh
+980|Faramarz Aslani|The Third Line
+981|Faramarz Aslani, Dariush, Ramesh|The Beloved Is Here
+982|Faramarz Aslani|Hayahou - Instrumental
+983|Faramarz Aslani|Afresh
+984|Faramarz Aslani|Stranger In Town
+985|Faramarz Aslani|Sineh Malamale Dard Ast
+986|Faramarz Aslani, Dariush, Ramesh|Devoted
+987|Faramarz Aslani|Nakhab Kourosh
+988|Faramarz Aslani|Yesteryears
+989|Faramarz Aslani|Ala Ey Ahooye Vahshi Kojaei
+990|Faramarz Aslani, Dariush, Ramesh|Ecstasy
+991|Faramarz Aslani|Listen To The Tale
+992|Faramarz Aslani|Till When?
+993|Faramarz Aslani|Yari Andar Kasi Nemibinam
+994|Faramarz Aslani, Dariush, Ramesh|Prayer
+995|Ahangverse, Faramarz Aslani|Age Ye Rooz
+996|Faramarz Aslani|Ba Modaee Magoeed
+997|Faramarz Aslani, Dariush, Ramesh|The Mystery That Is Me
+998|Faramarz Aslani|Sahar Ba Bad Migoftam Hadis Arezoo Mandi
+999|Faramarz Aslani, Dariush, Ramesh|I Am Filled With You
