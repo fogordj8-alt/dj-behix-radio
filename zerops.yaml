@@ -28,8 +28,9 @@ zerops:
     run:
       base: ubuntu/python@3.12
       prepareCommands:
-        - apt-get update
-        - apt-get install -y ffmpeg curl
+        - mkdir -p /var/lib/apt/lists/partial || sudo mkdir -p /var/lib/apt/lists/partial || true
+        - apt-get update || sudo apt-get update
+        - apt-get install -y ffmpeg curl || sudo apt-get install -y ffmpeg curl
         - pip3 install --break-system-packages yt-dlp
       start: python3 radio_server_multi.py
       ports:
