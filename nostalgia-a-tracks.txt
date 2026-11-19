@@ -31,19 +31,13 @@
 031|Googoosh|Ma'Shoogh
 032|Googoosh|Kaj Kola Khan
 033|Googoosh|Sedaghat
-034|Googoosh|Mano Gonjishka
 035|Googoosh|Ahouye Eshgh
 036|Googoosh|Bemoon Ta Bemoonam
 037|Googoosh|Komakam Kon
-038|Behrad Aria, Googoosh|Do Panjareh
 039|Googoosh|Negah
 040|Googoosh|Baraaye Man
-041|Googoosh|Dou Panjereh
-042|Behrad Aria, Googoosh|Man o Gonjeshkaye Khooneh
 043|Googoosh|Delkook
-044|Behrad Aria, Googoosh, Hasan Shamaeizadeh|Mordab
 045|Googoosh|Hala Bavar Bekonam
-046|Behrad Aria, Googoosh|Bavar Kon
 047|Googoosh|Behesht
 048|Googoosh|Nafas
 049|Googoosh|Sekeh Khorshid
@@ -82,7 +76,6 @@
 082|Moein|Eshghe Man
 083|Moein|Bot Parast
 084|Moein|Zalem
-085|Moein|Pareecheh
 086|Moein|Bavaram Kon
 087|Moein|Setareh
 088|Moein|Ghasam Nakhor
@@ -99,7 +92,6 @@
 099|Moein|Maandegar
 100|Aref|Ki Behtar Az To
 101|Aref|Mojezeye Eshgh
-102|Aref|The Medley
 103|Aref|Eshghe Tou Nemimirad
 104|Aref|Soltane Ghalbha
 105|Aref|Gole Golkhooneh
@@ -111,7 +103,6 @@
 111|Aref|Daryacheh Noor
 112|Aref|Hala Baz Dobareh Man
 113|Aref|Bargashte Mozhgan
-114|Behrad Aria, Aref|Daryacheh-e-Noor
 115|Aref|Ey Khoda - Radio Edit
 116|Aref|24 Saate
 117|Aref|Nasihat (Unplugged)
@@ -137,9 +128,7 @@
 137|Aref|Shahre Sokoot
 138|Aref|Kojaai?
 139|Aref|Lahzehaye Asheghaneh
-140|Googoosh, Aref, Hayedeh, Ramesh|Shahre Tehroon(Homayra)
 141|Aref|Hameh Chim Yar
-142|Aref, Googoosh|چرا نمیرقصی - جشن تولد شانزده سالگی گوگوش
 143|Aref|Marde Ghabileh
 144|Aref|Bebakhsh
 145|Aref|Sadeh Del
@@ -303,7 +292,6 @@
 303|Hassan Shamaizadeh|Morvarid
 304|Hassan Shamaizadeh|Berkeh
 305|Hassan Shamaizadeh|Ba Tou Beedar Misham
-306|Hassan Shamaizadeh|Mordab
 307|Hassan Shamaizadeh|Zargari
 308|Hassan Shamaizadeh|Aroosi
 309|Hassan Shamaizadeh|Dokhtare Mardom
@@ -318,29 +306,23 @@
 318|Hassan Shamaizadeh|Yeki Bedadam Bereseh
 319|Hassan Shamaizadeh|Aroos Va Damad
 320|Hassan Shamaizadeh|Divar Moosh Dareh
-321|Googoosh, Hassan Shamaizadeh|MORDAB
 322|Hassan Shamaizadeh|Dava
 323|Hassan Shamaizadeh|Dasteto Halgheh Kon Bedore Gardanam
 324|Hassan Shamaizadeh|Chesmo Abroo
 325|Hassan Shamaizadeh|Nemisheh
-326|Hassan Shamaizadeh|Gharibe Ashena
 327|Hassan Shamaizadeh|Tavalode Eshgh
 328|Hassan Shamaizadeh|Ghogha
 329|Hassan Shamaizadeh|Chelcheleh
-330|Hassan Shamaizadeh|Do Panjareh
 331|Hassan Shamaizadeh|Aroom Aroom
 332|Hassan Shamaizadeh|Chin Chine Daman
 333|Hassan Shamaizadeh|Aghaghi
 334|Aref, Shakila, Hengameh, Helen, Hassan Shamaizadeh|IRAN
 335|Hassan Shamaizadeh|Mano To
 336|Hassan Shamaizadeh|Gol
-337|Hassan Shamaizadeh|Medley: Dokhtare Mardom, Ashegham, Halla Halla, Bishtaro Bishtar, Dokhtare Koli
 338|Googoosh, Hassan Shamaizadeh|Mosalas
 339|Hassan Shamaizadeh|Khosham Khosham
 340|Hassan Shamaizadeh|Parvaze Eshgh
 341|Hassan Shamaizadeh|Asheghe Khoozestan
-342|Viguen, Aref, Hassan Shamaizadeh, Andy, Kouros, Hassan Shojaee, Fataneh, Nahid, Morteza Aghili|Navide Norooz
-343|Hassan Shamaizadeh|Man Va Gonjeshkaye Khooneh
 344|Hassan Shamaizadeh|Pesaram
 345|Siavash|Dokhtar Irooni
 346|Susan Roshan|Kabootare Del
@@ -351,7 +333,6 @@
 352|Shahrum Kashani|Havas
 353|Siavash|Dokhtare Choopoon
 354|Shahram Solati|Shab Bekheir
-355|Black Cats, Kamran & Hooman|Haramsara
 356|Ebi|Ba Tou
 357|Ebi|Atreh Toh
 358|Ebi|Ghebleh

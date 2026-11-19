@@ -32,7 +32,6 @@
 533|Shahram Shabpareh|Khooneh
 534|Shahram Shabpareh|Vaveyla
 535|Shahram Shabpareh|Yareh Shirin Sokhanam
-536|Shahram Shabpareh|Vaveyla , Labe Karoon
 537|Shahram Shabpareh|Deyar - Folk Version
 538|Shahram Shabpareh|Baghe Alefba
 539|Shahram Shabpareh|Mademoiselle
@@ -41,8 +40,6 @@
 542|Shahram Shabpareh|Yareh Bi Vafa
 543|Shahram Shabpareh|Doomad - New Version
 544|Shahram Shabpareh|Eshghe Tabestani
-545|Shahram Shabpareh|Mitooni
-546|Shahram Shabpareh, Shohreh, Andy, Kouros|Medley
 547|Shahram Shabpareh|Koocheh Beh Koocheh
 548|Shahram Shabpareh|Faseleh
 549|Shahram Shabpareh|Milad
@@ -73,7 +70,6 @@
 574|Shahram Shabpareh|Sadeh
 575|Shahram Shabpareh|Mosafer
 576|Shahram Shabpareh|Didar
-577|Shahram Shabpareh|Chera Nemiraghsi, Zane Ziba, Baroon Barooneh
 578|Shahram Shabpareh|Lajbaz
 579|Leila Forouhar|Jooni Joonom
 581|Leila Forouhar|Del Ey Del - Alternate Version
@@ -84,19 +80,16 @@
 586|Leila Forouhar|Vadeh
 587|Leila Forouhar|Chee Seda Konam Toro
 588|Leila Forouhar|Bahaneh
-589|Leila Forouhar|Jolene
 590|Leila Forouhar|Janomeh (Afghani)
 591|Leila Forouhar|Zim Zim
 592|Leila Forouhar|Delam
 593|Leila Forouhar|Bahare Eshgh
 594|Leila Forouhar|Baazaar-E-Makkaareh
 595|Leila Forouhar|Eshghe Tazeh
-596|Leila Forouhar, Anoushirvan Rohani|Bahaneh
 597|Leila Forouhar|Do Parandeh
 598|Leila Forouhar|Ye Zarreh Del
 599|Leila Forouhar|Shamim
 600|Leila Forouhar|Kheili Douset Daram
-601|Leila Forouhar|Soltane Ghalbha
 602|Leila Forouhar|Shekveh
 603|Leila Forouhar|Beegharari
 604|Leila Forouhar|Mahe Man
@@ -106,13 +99,10 @@
 608|Leila Forouhar|Eshgham
 609|Leila Forouhar|Yek Bouseh
 610|Leila Forouhar, Anoushirvan Rohani|Ghasam Be Tou
-611|Leila Forouhar|Viroon Beshi Ey Del
-612|Leila Forouhar|Ba Delam Ghahr Nakon - Extended
+611|Pouran|Viroon Beshi Ey Del
 613|Leila Forouhar|Kabootare Eshgh
-614|Googoosh, Leila Forouhar, Shahrzad Sepanlou, Sogand, Darya Dadvar|Dobareh
 615|Leila Forouhar|Makhmale Naz
 616|Leila Forouhar|Cheh Balaee Ey Del
-617|Leila Forouhar|Kalaghaye Khabarchin
 618|Leila Forouhar|Har Chi Bekhay
 619|Leila Forouhar|Baladi (Arabic)
 620|Leila Forouhar|Gole Man
@@ -161,11 +151,8 @@
 663|Shohreh|Dehrooz O Emrooz
 664|Shohreh|Maghsad
 665|Shohreh|Rosvaa
-666|Shohreh|Chera Rafti
 667|Shohreh|Gomshodeh
-668|Shohreh|Ghesmat
 669|Shohreh|Toloo
-670|Shohreh|Telesm
 671|Shohreh|Sheytoonak
 672|Shohreh|Naji
 673|Shohreh|Dele Khosh Bavar
@@ -183,7 +170,6 @@
 685|Shohreh|Asemoon
 686|Shohreh|Sogoli
 687|Shohreh|Kalagheh Domsiah
-688|Shahram Shabpareh|Telesm Shahram & Shohreh
 689|Shamaizadeh|Be Ghorboonet Begardam
 690|Shohreh|Eshghe Aval
 691|Shohreh|Toyee
@@ -225,7 +211,6 @@
 727|Farhad Mehrad|Sunrise, Sunset
 728|Farhad Mehrad|Where Can I Go Without
 729|Farhad Mehrad|Forbidden Games
-730|Farhad Mehrad|Intro
 731|Farhad Mehrad|Alone Again (Naturally)
 732|Farhad Mehrad|7 Rooms of Gloom
 733|Farhad Mehrad|Suzanne
@@ -265,16 +250,13 @@
 767|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Dast Be Dastmalam Nazan
 768|Marzieh, Homayoun Khorram|Shararehaye Javedani
 769|Marzieh|Khoda Koneh Keh Khabam Nabareh
-770|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh, Azize Delomi
 771|Marzieh|Didi Keh Rosva Shod Delam
 772|Marzieh|Dar Miane Golha
 773|Banan, Marzieh|Dast Be Dastmalom
 774|Marzieh|Gharghe Gonah
-775|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh & Moosighi
 776|Marzieh|Tavoos
 777|Marzieh|Avaze Del - 2023 Remastered Version
 778|Marzieh|Peyvande Golha
-779|Banan, Elaheh, Fakhtei, Akbar Golpaygani, Marzieh|Deklameh
 780|Marzieh|Tanhaee
 781|Marzieh, Jalil Shahnaz|Mouyeh, Shekasteh Mouyeh (Farda Ke Khalayegh Ra Az Khak) - 2023 Remastered Version
 782|Marzieh|Gole Sepid
@@ -297,7 +279,6 @@
 799|Marzieh|Saz-o Avaz, Pt. VI (Tark-e sharab kardam-o ...) - 2023 Remastered Version
 800|Marzieh|Ranje Zendegani
 801|Viguen, Delkash|Bordi Az Yadam
-802|Viguen, Delkash|Bordy Az Yadam - Ba Delkash
 803|Delkash|Omide Janam
 804|Delkash|Porsoon, Larzoon
 805|Delkash|Ashegham Man
@@ -312,9 +293,7 @@
 814|Delkash|Maktabe Vafa
 815|Delkash|Yade Man Kon
 816|Viguen, Delkash|Delam Mikhast
-817|Behrad Aria, Delkash|Ashegham Man
 818|Delkash|Saze Shekasteh
-819|Viguen, Delkash|Payam Be Ragib - Delkash
 820|Delkash|Beh Eshghe Tou Mastam
 821|Delkash|Safar Kardeh
 822|Delkash|Man Ghami Daram
@@ -327,7 +306,6 @@
 829|Delkash|Atashe Carvan
 830|Delkash|Moj
 831|Delkash|Negaranam
-832|Delkash|Taraneh Maktabe Vafa
 833|Delkash|Saghi
 834|Delkash|Bekenaram Benshin
 835|Delkash|Gomrah
@@ -341,7 +319,6 @@
 843|Delkash|Begoo Keh Hasti Begoo
 844|Delkash|Pashiman Shodam
 845|Delkash|Cheh Bekhahi Cheh Nakhahi
-846|Delkash|Beh Kenaram Benshin
 847|Delkash|Raghse Koliha
 848|Delkash|Mehmanat Konam
 849|Delkash|Amadam
@@ -351,7 +328,6 @@
 854|Viguen, Pouran|Shaneh
 855|Viguen|Sari Gelin
 856|Viguen|Setareh
-858|Viguen|Shah Doomad
 859|Viguen|Baroon Barooneh
 860|Viguen|Parie Daryaee
 861|Viguen, Pouran|Atash Neshani
@@ -360,9 +336,6 @@
 865|Viguen|Dele Divaneh
 867|Ramesh, Viguen|Gole Booseh
 868|Viguen|Mahtab
-869|Vigen|Mahtab
-870|Viguen, Pouran|Shane - Pouran
-871|Viguen|Raghib
 873|Viguen|Yade To
 874|Viguen|Bandar
 875|Viguen|Sogand
@@ -375,7 +348,6 @@
 882|Viguen|Baba Karam
 883|Viguen|Zann
 884|Viguen|Akh Joon
-885|Viguen|Baroun Baroune
 886|Viguen|Ghazaal
 887|Viguen|Kabke Vahshi
 888|Viguen|Kalaagh Par
@@ -383,9 +355,7 @@
 890|Viguen|Ghahr O Ashti
 891|Viguen|Fenjaane Tala
 892|Viguen|Karvane Arous
-893|Viguen|Chra Nemiraghassy
 894|Viguen|Leili Manaal
-895|Viguen|Asbe Som Tala
 896|Viguen|Bikhabar Az Eshgh
 897|Viguen|Nisho Noosh
 898|Viguen|Yadegari
@@ -421,7 +391,6 @@
 928|Morteza|Gole Sharab
 929|Morteza|Botparast - Safar
 930|Morteza|امشب
-931|Morteza|Ahanghaye Mahali - Medley
 932|Morteza|Yaram Laj Kardeh
 933|Morteza|Bacheye Khoozestan
 934|Morteza|Jang
@@ -444,7 +413,6 @@
 951|Morteza|Donyaye Rangi
 952|Morteza|Maykhaneh
 953|Faramarz Aslani|Age Yeh Rooz
-954|Faramarz Aslani, Mehran Abbasi|Age Ye Rooz Beri Safar - Mehran Abbasi Remix
 955|Faramarz Aslani, Babak Amini|Yar
 956|Faramarz Aslani|Hanooz (Romantic Version)
 957|Faramarz Aslani|Del Asireh
@@ -454,13 +422,10 @@
 961|Faramarz Aslani|Aahooye Vahshi
 962|Faramarz Aslani|Castle Of Loneliness
 963|Faramarz Aslani, Babak Amini|Vaghti Rafti
-964|Behrad Aria, Faramarz Aslani|Midooni del Asire
 965|Faramarz Aslani|Shab
-966|ASADI, Erfan, Faramarz Aslani|Age Ye Rooz - Remix
 967|Faramarz Aslani, Babak Amini|Sedayam Kon
 968|Faramarz Aslani|Call My Name
 969|Faramarz Aslani|Divar
-970|Faramarz Aslani|Hanooz (Rhythmic Version)
 971|Faramarz Aslani, Babak Amini|Historia de un Amor
 972|Faramarz Aslani|Days Of Song And Sorrow
 973|Faramarz Aslani|Darigh
@@ -485,7 +450,6 @@
 992|Faramarz Aslani|Till When?
 993|Faramarz Aslani|Yari Andar Kasi Nemibinam
 994|Faramarz Aslani, Dariush, Ramesh|Prayer
-995|Ahangverse, Faramarz Aslani|Age Ye Rooz
 996|Faramarz Aslani|Ba Modaee Magoeed
 997|Faramarz Aslani, Dariush, Ramesh|The Mystery That Is Me
 998|Faramarz Aslani|Sahar Ba Bad Migoftam Hadis Arezoo Mandi
@@ -540,3 +504,25 @@
 1047|Shahrokh|Koli
 1048|Shahrokh|Soofi
 1049|Shahrokh|Aloonak
+1050|Pouran|Shaneh
+1051|Pouran|Zendegi Ay Zendegi
+1052|Pouran|Kieh Kieh Dar Mizaneh
+1053|Pouran|Migardam Dore Donya
+1054|Pouran|Shab Bood Beyaban Bood
+1055|Pouran|Ashkam Dooneh Dooneh
+1056|Pouran, Viguen|Niloofar
+1057|Viguen|Mara Beboos
+1058|Viguen|Be Khatere To
+1059|Viguen|Zan
+1060|Hayedeh|Gheseye Man
+1061|Dariush|Dastaye Tou
+1062|Dariush|Tekyeh Bar Bad
+1063|Dariush|Chakavak
+1064|Shohreh|Panjereha
+1065|Homayra|Shabe Por Setareh
+1066|Homayra|Darya Kenar
+1067|Homayra|Mehraboonit Ghashangeh
+1068|Homayra|Eshghe Ziad
+1069|Homayra|Dah Bahar
+1070|Homayra|Aziztarin
+1071|Homayra|Sargardoon
