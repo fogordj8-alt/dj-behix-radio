@@ -1,0 +1,50 @@
+# zerops.yaml — DJ BEHIX Radio (all 4 stations, full libraries)
+# One service "radio", Python 3.12. The server downloads all 2,247 MP3s
+# at runtime with yt-dlp (background thread per station) and streams them
+# as a live endless radio. No Telegram involved.
+#
+# Repo files needed at the ROOT of the GitHub repo:
+#   radio_server.py, afro-tracks.txt, nostalgia-tracks.txt,
+#   pop-tracks.txt, gym-tracks.txt  (the FULL lists, 500/999/500/248)
+#
+# Disk: set in the Zerops dashboard (service settings) BEFORE deploy —
+# the full library is ~10 GB at 128k MP3, so set at least 12 GB.
+# Zerops disk is persistent for the service, so downloads survive restarts.
+# Sizing guide: 1 shared CPU, 0.25 GB RAM + 12 GB disk.
+# Public URL is shown in the Zerops dashboard after deploy.
+# Verify: <url>/health -> "ok", <url>/status -> per-station download %,
+#         <url>/stream/afro -> endless MP3.
+
+zerops:
+  - setup: radio
+    build:
+      base: ubuntu/python@3.12
+      deployFiles:
+        - radio_server.py
+        - afro-tracks.txt
+        - nostalgia-tracks.txt
+        - pop-tracks.txt
+        - gym-tracks.txt
+    run:
+      base: ubuntu/python@3.12
+      prepareCommands:
+        - apt-get update
+        - apt-get install -y ffmpeg curl
+        - pip3 install --break-system-packages yt-dlp
+      start: python3 radio_server.py
+      ports:
+        - port: 8000
+          httpSupport: true
+      envVariables:
+        PORT: "8000"
+        MUSIC_DIR_AFRO: ./music-afro
+        MUSIC_DIR_NOSTALGIA: ./music-nostalgia
+        MUSIC_DIR_POP: ./music-pop
+        MUSIC_DIR_GYM: ./music-gym
+      healthCheck:
+        httpGet:
+          port: 8000
+          path: /health
+          scheme: http
+        failureTimeout: "60s"
+        execPeriod: "10s"
