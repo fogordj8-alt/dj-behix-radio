@@ -38,10 +38,11 @@ zerops:
           httpSupport: true
       envVariables:
         PORT: "8000"
-        MUSIC_DIR_AFRO: ./music-afro
-        MUSIC_DIR_NOSTALGIA: ./music-nostalgia
-        MUSIC_DIR_POP: ./music-pop
-        MUSIC_DIR_GYM: ./music-gym
+        TRACKS_DIR: /var/www
+        MUSIC_DIR_AFRO: /var/www/music-afro
+        MUSIC_DIR_NOSTALGIA: /var/www/music-nostalgia
+        MUSIC_DIR_POP: /var/www/music-pop
+        MUSIC_DIR_GYM: /var/www/music-gym
       healthCheck:
         httpGet:
           port: 8000
