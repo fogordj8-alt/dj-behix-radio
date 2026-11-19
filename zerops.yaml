@@ -20,7 +20,7 @@ zerops:
     build:
       base: ubuntu/python@3.12
       deployFiles:
-        - radio_server.py
+        - radio_server_multi.py
         - afro-tracks.txt
         - nostalgia-tracks.txt
         - pop-tracks.txt
@@ -31,7 +31,7 @@ zerops:
         - apt-get update
         - apt-get install -y ffmpeg curl
         - pip3 install --break-system-packages yt-dlp
-      start: python3 radio_server.py
+      start: python3 radio_server_multi.py
       ports:
         - port: 8000
           httpSupport: true
