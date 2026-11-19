@@ -54,6 +54,14 @@ STATIONS = {
     "gym": os.environ.get("MUSIC_DIR_GYM", "/app/music-gym"),
 }
 
+# Optional filter: STATIONS=afro runs only the Afro station (one Zerops
+# service per station). Comma-separated; default is all stations.
+_wanted = os.environ.get("STATIONS")
+if _wanted:
+ _keep = {s.strip() for s in _wanted.split(",") if s.strip() in STATIONS}
+ if _keep:
+  STATIONS = {name: d for name, d in STATIONS.items() if name in _keep}
+
 # Hyphenated station ids some clients use -> canonical single-word id.
 ALIASES = {
     "afro-house": "afro",
