@@ -347,7 +347,6 @@
 347|Leila Forouhar|Yare Shirin
 348|Mansour|Cheshme Siah
 349|Andy & Kouros|Behesh Begoo
-350|Moein|Eshghe Moondegar
 351|Leila Forouhar|Ba Delam Ghahr Nakon
 352|Shahrum Kashani|Havas
 353|Siavash|Dokhtare Choopoon
@@ -374,7 +373,6 @@
 374|Ebi|Hezaro Yek Shab
 375|Ebi|Begoo Ey Yar Begoo
 376|Ebi|Akharin Bar
-377|Ebi|Pichak
 378|Ebi|Delpoosh
 379|Ebi|Vaghti Tou Geryeh Mikoni
 380|Ebi|Donyaye Arezo

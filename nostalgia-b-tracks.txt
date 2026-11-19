@@ -16,7 +16,6 @@
 516|Dariush|Shabkhoon
 517|Dariush|Talaafi
 518|Dariush|Deevar
-519|Dariush|Ey Eshgh
 520|Dariush|Soghoot
 521|Dariush|Booye Gandom
 522|Dariush|Rahgozare Omr
@@ -77,7 +76,6 @@
 577|Shahram Shabpareh|Chera Nemiraghsi, Zane Ziba, Baroon Barooneh
 578|Shahram Shabpareh|Lajbaz
 579|Leila Forouhar|Jooni Joonom
-580|Leila Forouhar|Yare Shirin
 581|Leila Forouhar|Del Ey Del - Alternate Version
 582|Leila Forouhar|Ba Tou
 583|Leila Forouhar|Pardis
@@ -350,26 +348,21 @@
 850|Delkash|Migozaram
 851|Viguen|Shahdoomad
 852|Viguen|Chera Nemiraghsi
-853|Viguen, Delkash|Bordi Az Yadam
 854|Viguen, Pouran|Shaneh
 855|Viguen|Sari Gelin
 856|Viguen|Setareh
-857|Viguen|Chera Nemiraghsi
 858|Viguen|Shah Doomad
 859|Viguen|Baroon Barooneh
 860|Viguen|Parie Daryaee
 861|Viguen, Pouran|Atash Neshani
 862|Viguen|shokoufeha
 863|Viguen|Beyade Leili
-864|Viguen|Chera Nemiraghsi
 865|Viguen|Dele Divaneh
-866|Viguen, Delkash|Delam Mikhast
 867|Ramesh, Viguen|Gole Booseh
 868|Viguen|Mahtab
 869|Vigen|Mahtab
 870|Viguen, Pouran|Shane - Pouran
 871|Viguen|Raghib
-872|Viguen|Dele Divaneh
 873|Viguen|Yade To
 874|Viguen|Bandar
 875|Viguen|Sogand
@@ -497,3 +490,53 @@
 997|Faramarz Aslani, Dariush, Ramesh|The Mystery That Is Me
 998|Faramarz Aslani|Sahar Ba Bad Migoftam Hadis Arezoo Mandi
 999|Faramarz Aslani, Dariush, Ramesh|I Am Filled With You
+1000|Habib|Donya
+1001|Habib|Kharchanghaye Mordabi
+1002|Habib|Bezan Baran
+1003|Habib|Shahla
+1004|Habib|Mardeh Tanhayeh Shab
+1005|Habib|Kavir Vavar
+1006|Habib|Nafas
+1007|Habib|Marg E Ghoo
+1008|Habib|Eshare
+1009|Habib|Hezaran
+1010|Habib|Iran Banoo
+1011|Habib|Ghesseyeh Eshg
+1012|Habib|Havaye Gerye
+1013|Habib|Khodeshe
+1014|Habib|Maro Baash
+1015|Habib|Shirin Va Farhad
+1016|Habib|Zendegi
+1017|Habib|Tanhai
+1018|Habib|Baroon
+1019|Habib|Setareh
+1020|Habib|Azize Man
+1021|Habib|Ghebleh
+1022|Habib|Setareha
+1023|Habib|Lantarani
+1024|Habib, Mohammed|Eydi
+1025|Shahrokh|Haz Kardam
+1026|Shahrokh|Margoob
+1027|Shahrokh|Lobat
+1028|Shahrokh|Nazoki
+1029|Shahrokh|Borjeh Aj
+1030|Shahrokh|Payeez
+1031|Shahrokh|Mimiram
+1032|Shahrokh|Parishoun
+1033|Shahrokh|Dire Dire
+1034|Shahrokh|Shahre Zolmat
+1035|Shahrokh|Deleh Ma Bien
+1036|Shahrokh|Goldasteh
+1037|Shahrokh|Tofang
+1038|Shahrokh|Kooheh Damavand
+1039|Shahrokh|Aroosakeh Shekastani
+1040|Shahrokh|Asheghi Kodoomeh
+1041|Shahrokh|Safar Naroh
+1042|Shahrokh|Ashegheh
+1043|Shahrokh|Bemoon Ba Man
+1044|Shahrokh|Ham Parvaz
+1045|Shahrokh|Delam Gerefteh
+1046|Shahrokh|Miraas
+1047|Shahrokh|Koli
+1048|Shahrokh|Soofi
+1049|Shahrokh|Aloonak
