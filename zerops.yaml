@@ -23,6 +23,8 @@ zerops:
         - radio_server_multi.py
         - afro-tracks.txt
         - nostalgia-tracks.txt
+        - nostalgia-a-tracks.txt
+        - nostalgia-b-tracks.txt
         - pop-tracks.txt
         - gym-tracks.txt
     run:
