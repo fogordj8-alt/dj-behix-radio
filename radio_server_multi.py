@@ -328,7 +328,7 @@ class Broadcaster:
 
 def make_handler(broadcasters):
     class Handler(BaseHTTPRequestHandler):
-     protocol_version = "HTTP/1.1"
+         protocol_version = "HTTP/1.1"
      
         def log_message(self, fmt, *args):
             pass
