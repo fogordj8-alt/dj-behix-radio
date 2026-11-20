@@ -305,6 +305,12 @@ class Broadcaster:
     def run(self):
         log(f"[{self.name}] broadcaster started (dir: {', '.join(self.music_dirs)})")
         prev_path = None
+        recent_artists = []  # artists of the last 3 played tracks
+        def artist_of(p):
+            # Artist from a filename "NNN - Artist - Title.mp3"; "" if unknown.
+            name = os.path.splitext(os.path.basename(p))[0]
+            parts = name.split(" - ")
+            return parts[1].strip() if len(parts) > 1 else ""
         while not self._stop.is_set():
             tracks = list_tracks(self.music_dirs)
             if not tracks:
@@ -314,9 +320,27 @@ class Broadcaster:
             self.track_count = len(tracks)
             # Pick one random track at a time (never the same twice in a row),
             # so the archive plays in a truly random order, never sequentially.
-            choices = [t for t in tracks if t != prev_path] or tracks
+            # Artist diversity: prefer a track whose artist is not among the
+            # last 3 played artists, so the same singer cannot repeat
+            # back-to-back. Fallbacks: exclude only the previous track's
+            # artist, then any track except the previous file (tiny pools
+            # where every artist is recent still keep playing).
+            no_same_file = [t for t in tracks if t != prev_path] or tracks
+            fresh = [t for t in no_same_file
+                     if not artist_of(t) or artist_of(t) not in recent_artists]
+            if fresh:
+                choices = fresh
+            else:
+                prev_artist = artist_of(prev_path) if prev_path else ""
+                choices = ([t for t in no_same_file
+                            if not artist_of(t) or artist_of(t) != prev_artist]
+                           or no_same_file)
             path = self.rng.choice(choices)
             prev_path = path
+            artist = artist_of(path)
+            if artist:
+                recent_artists.append(artist)
+                recent_artists = recent_artists[-3:]
             log(f"[{self.name}] random pick: {os.path.basename(path)} "
                 f"(of {len(tracks)} tracks)")
             try:
