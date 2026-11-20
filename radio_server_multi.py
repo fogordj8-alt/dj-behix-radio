@@ -460,7 +460,7 @@ def make_handler(broadcasters):
             self.send_response(200)
             self.send_header("Content-Type", "audio/mpeg")
             self.send_header("Cache-Control", "no-cache")
-         self.send_header("X-Accel-Buffering", "no")
+            self.send_header("X-Accel-Buffering", "no")
             self.send_header("Connection", "keep-alive")
             self.send_header("X-Now-Playing", str(b.current["track"] or ""))
             self.end_headers()
