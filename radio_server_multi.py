@@ -328,11 +328,11 @@ class Broadcaster:
 
 def make_handler(broadcasters):
     class Handler(BaseHTTPRequestHandler):
-       protocol_version = "HTTP/1.1"
+        protocol_version = "HTTP/1.1"
         def log_message(self, fmt, *args):
             pass
 
-         def send_response(self, code, message=None):
+        def send_response(self, code, message=None):
             super().send_response(code, message)
             self.send_header("Access-Control-Allow-Origin", "*")
 
