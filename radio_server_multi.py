@@ -173,11 +173,11 @@ def download_station(name, music_dir, list_file, suffix, initial_delay=0):
                         r = subprocess.run(
                             ["yt-dlp", "-x", "--audio-format", "mp3",
                              "--audio-quality", "128K", "-o", dest,
-                             *extra_args, search],
+                             "--match-filter", "duration < 720", *extra_args, search],
                             capture_output=True, text=True, timeout=300,
                         )
                         if r.returncode == 0 and os.path.isfile(dest) and os.path.getsize(dest) > 0:
-                            ok = True
+                            dur = probe_duration(dest); ok = False if dur is not None and dur > 720 else True; os.remove(dest) if not ok else None
                             break
                         if r.stderr:
                             lines = [l for l in r.stderr.strip().splitlines() if l.strip()]
