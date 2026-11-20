@@ -332,7 +332,7 @@ def make_handler(broadcasters):
         def log_message(self, fmt, *args):
             pass
 
-        def send_response(self, code, message=None):
+         def send_response(self, code, message=None):
             super().send_response(code, message)
             self.send_header("Access-Control-Allow-Origin", "*")
 
