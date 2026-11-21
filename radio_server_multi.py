@@ -224,6 +224,15 @@ def probe_duration(path):
         return None
 
 
+def safe_header(value):
+    """HTTP headers are latin-1: replace any char outside it (curly
+    quotes, accented letters) with '?' instead of crashing the
+    response with UnicodeEncodeError — which the proxy turns into a
+    502 for the listener. (A track like "Rockin'." with a curly
+    apostrophe killed every new stream connection while it played.)"""
+    return (value or "").encode("latin-1", "replace").decode("latin-1")
+
+
 def list_tracks(music_dirs):
     tracks = []
     for d in music_dirs:
@@ -540,7 +549,7 @@ def make_handler(broadcasters):
             self.send_header("Cache-Control", "no-cache")
             self.send_header("X-Accel-Buffering", "no")
             self.send_header("Connection", "keep-alive")
-            self.send_header("X-Now-Playing", str(b.current["track"] or ""))
+            self.send_header("X-Now-Playing", safe_header(b.current["track"]))
             self.end_headers()
             try:
                 while True:
