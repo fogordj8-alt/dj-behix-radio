@@ -166,6 +166,16 @@
   }
   .live-badge .dot{width:.36rem;height:.36rem;border-radius:50%;background:#ff3b30;box-shadow:0 0 .5rem #ff3b30}
   .card.playing .live-badge .dot{animation:waitpulse 1.2s ease-in-out infinite}
+  /* Offline badge: shows instead of the live badge while a station
+     plays its cached songs with no connection. */
+  .off-badge{
+    flex:0 0 auto;display:none;align-items:center;gap:.24rem;
+    font-size:.52rem;font-weight:800;color:#ffe9b0;
+    background:rgba(5,5,10,.5);border:1px solid var(--gold-soft);
+    padding:.1rem .38rem;border-radius:2rem;
+  }
+  .card.offline .off-badge{display:inline-flex}
+  .card.offline .live-badge{display:none}
   /* Now-playing rows: the song name sits small, on the same row as
      its timer, and the artist shares its row with the live badge —
      so «زنده» no longer sits on the station-name line at all. */
@@ -188,18 +198,25 @@
     flex:0 0 auto;font-size:.72rem;font-weight:600;color:#fff;letter-spacing:.02em;line-height:1.3;
     font-variant-numeric:tabular-nums;min-height:.94rem;direction:ltr;
   }
-  /* "please wait" pill: floats over the card's corner only while
+  /* "please wait" overlay: sits in the MIDDLE of the card while
      that station is still connecting after a play tap — the first
      tap takes a few seconds — and disappears the moment the audio
-     actually starts (the .connecting class comes off). */
+     actually starts (the .connecting class comes off). A dim veil
+     over the whole card plus a spinner keeps the message readable
+     and makes it obvious the station is working, not stuck. */
   .card .wait-msg{
-    display:none;position:absolute;bottom:.4rem;inset-inline-start:.65rem;z-index:2;
-    margin:0;padding:.14rem .55rem;border-radius:2rem;
-    background:rgba(8,6,4,.82);border:1px solid var(--gold-soft);
-    font-size:.72rem;font-weight:700;line-height:1.5;color:#ffe9b0;
-    animation:waitpulse 1.4s ease-in-out infinite;
+    display:none;position:absolute;inset:0;z-index:3;
+    margin:0;align-items:center;justify-content:center;gap:.55rem;
+    background:rgba(8,6,4,.72);
+    font-size:.85rem;font-weight:700;line-height:1.5;color:#ffe9b0;
+    text-align:center;padding:0 .6rem;
   }
-  .card.connecting .wait-msg{display:block}
+  .card .wait-msg::before{
+    content:"";flex:0 0 auto;width:1.05rem;height:1.05rem;border-radius:50%;
+    border:2px solid rgba(255,233,176,.35);border-top-color:#ffe9b0;
+    animation:spin .7s linear infinite;
+  }
+  .card.connecting .wait-msg{display:flex}
   @keyframes waitpulse{0%,100%{opacity:1}50%{opacity:.45}}
   @keyframes spin{to{transform:rotate(360deg)}}
   .pbtn{
@@ -223,7 +240,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     .card{transition:none}
-    .card .wait-msg,.card.playing .live-badge .dot{animation:none}
+    .card .wait-msg::before,.card.playing .live-badge .dot{animation:none}
     .card.connecting .pbtn::after{animation-duration:1.6s}
   }
   /* Phones: compact the header and the bottom row further so the
@@ -398,7 +415,7 @@
         </div>
         <div class="arow">
           <p class="artist" id="artist-afro"></p>
-          <span class="live-badge"><span class="dot"></span>زنده</span>
+          <span class="live-badge"><span class="dot"></span>زنده</span><span class="off-badge">آفلاین</span>
         </div>
         <div class="prow">
           <div class="bar"><div class="fill" id="fill-afro"></div></div>
@@ -423,7 +440,7 @@
         </div>
         <div class="arow">
           <p class="artist" id="artist-nostalgia"></p>
-          <span class="live-badge"><span class="dot"></span>زنده</span>
+          <span class="live-badge"><span class="dot"></span>زنده</span><span class="off-badge">آفلاین</span>
         </div>
         <div class="prow">
           <div class="bar"><div class="fill" id="fill-nostalgia"></div></div>
@@ -448,7 +465,7 @@
         </div>
         <div class="arow">
           <p class="artist" id="artist-pop"></p>
-          <span class="live-badge"><span class="dot"></span>زنده</span>
+          <span class="live-badge"><span class="dot"></span>زنده</span><span class="off-badge">آفلاین</span>
         </div>
         <div class="prow">
           <div class="bar"><div class="fill" id="fill-pop"></div></div>
@@ -473,7 +490,7 @@
         </div>
         <div class="arow">
           <p class="artist" id="artist-gym"></p>
-          <span class="live-badge"><span class="dot"></span>زنده</span>
+          <span class="live-badge"><span class="dot"></span>زنده</span><span class="off-badge">آفلاین</span>
         </div>
         <div class="prow">
           <div class="bar"><div class="fill" id="fill-gym"></div></div>
@@ -705,6 +722,29 @@ function anchorStation(st){
 function renderStation(st){
   var shown = null;
   var a = st.audio;
+  /* Offline mode: the cached local file is the clock — show its own
+     position and duration, not the server's timeline. */
+  if (st.offline && a){
+    var dur = (isFinite(a.duration) && a.duration > 0) ? a.duration : (st.offDuration || 0);
+    var el3 = a.currentTime || 0;
+    if (dur > 0 && el3 > dur) el3 = dur;
+    if (el3 < 0) el3 = 0;
+    st.dispKey = "off-" + (st.offIdx || 0);
+    st.dispTitle = st.offTitle || st.nameFa;
+    st.dispArtist = st.offArtist || "";
+    st.dispElapsed = el3; st.dispDuration = dur;
+    if (st._shownKey !== st.dispKey){
+      st._shownKey = st.dispKey;
+      st.titleEl.textContent = st.dispTitle;
+      st.artistEl.textContent = st.dispArtist;
+      st.titleEl.title = st.dispTitle;
+      st.artistEl.title = st.dispArtist;
+      if (audibleId === st.id) updateMediaSession();
+    }
+    st.timerEl.textContent = fmt(el3) + " / " + fmt(dur);
+    st.fillEl.style.width = (dur > 0 ? (el3 / dur) * 100 : 0) + "%";
+    return;
+  }
   /* The moment the heard station can actually play, its connecting
      state is over — the wait line and spinner come off even if the
      "playing" event was missed while the element was muted. */
@@ -991,7 +1031,12 @@ function ensureAudio(st){
     }, 700);
   });
   a.addEventListener("error", function(){ st.warm = false; scheduleRewarm(st); });
-  a.addEventListener("ended", function(){ st.warm = false; scheduleRewarm(st); });
+  a.addEventListener("ended", function(){
+    /* Offline mode: the cached file finished — play the next cached
+       song instead of rewarming the live stream. */
+    if (st.offline){ st.offIdx = (st.offIdx || 0) + 1; playOfflineTrack(st); return; }
+    st.warm = false; scheduleRewarm(st);
+  });
   st.audio = a;
   return a;
 }
@@ -1031,6 +1076,20 @@ function warmStation(st){
 
 function playStation(st){
   tapAt = performance.now();
+  /* No connection: play this station's cached songs instead of the
+     live stream (see the offline block below). */
+  if (!navigator.onLine){
+    playOffline(st);
+    return;
+  }
+  /* Coming back online while a station plays cached songs: drop the
+     offline state and rebuild the live stream below. */
+  if (st.offline){
+    st.offline = false;
+    st.card.classList.remove("offline");
+    if (st.offUrl){ try { URL.revokeObjectURL(st.offUrl); } catch (e) {} st.offUrl = null; }
+    if (st.audio){ try { st.audio.src = streamUrlOf(st); st.audio.load(); } catch (e) {} }
+  }
   /* Silence every other station; this one is already streaming, so
      unmuting inside the same tap starts the music instantly. */
   stations.forEach(function(o){ if (o !== st && o.audio) o.audio.muted = true; });
@@ -1067,6 +1126,17 @@ function playStation(st){
   pollStation(st);
 }
 function stopStation(st){
+  /* Offline playback: stop the cached file and rebuild the live
+     stream element, so the next online tap is instant. */
+  if (st.offline){
+    st.offline = false;
+    st.card.classList.remove("offline");
+    if (st.offUrl){ try { URL.revokeObjectURL(st.offUrl); } catch (e) {} st.offUrl = null; }
+    if (st.audio){
+      try { st.audio.pause(); } catch (e) {}
+      try { st.audio.src = streamUrlOf(st); st.audio.load(); } catch (e) {}
+    }
+  }
   /* Mute only — do NOT pause or disconnect: the stream keeps flowing
      so it stays buffered and the next play is instant. */
   if (st.audio) st.audio.muted = true;
@@ -1172,12 +1242,15 @@ stations.forEach(warmStation);
 /* First touch anywhere retries any station whose muted autoplay was
    blocked — judged by the element's real paused state, not the warm
    flag, which can claim "warm" for an element the browser has since
-   paused. */
-document.addEventListener("pointerdown", function(){
+   paused. touchstart fires before pointerdown on phones, so the
+   warm-up starts on the very first contact, not a beat later. */
+function warmAllOnGesture(){
   stations.forEach(function(st){
     if (!st.warm || (st.audio && st.audio.paused)) warmStation(st);
   });
-});
+}
+document.addEventListener("pointerdown", warmAllOnGesture);
+document.addEventListener("touchstart", warmAllOnGesture, { passive: true });
 /* Watchdog: browsers and WebViews silently pause muted streams
    (after a proxy stall, memory pressure, an OS interruption). Stop
    here is mute-only, so a paused element is NEVER intentional —
@@ -1205,6 +1278,148 @@ setInterval(function(){
     }
   });
 }, 2500);
+
+/* ---------- offline mode: listen with no connection ----------
+   The live stream needs internet — but once the page has been
+   opened online, it quietly downloads 10 songs per station into
+   the phone's cache (one file every few seconds, in the
+   background, so it never fights the live stream for bandwidth).
+   If the listener later opens the page with no connection, each
+   station plays its OWN cached songs instead of the shared live
+   loop: offline cannot be synchronised, every phone plays its own
+   cached set. The timer, progress bar and song name keep working
+   from the local file, and the card shows an «آفلاین» badge.
+   First visit must be online, so the songs can be cached. */
+var OFFLINE_CACHE = "radio-behix-offline-v1";
+var OFFLINE_META_KEY = "radio-behix-offline-meta";
+var OFFLINE_PER_STATION = 10;
+var offlineMeta = {};
+try { offlineMeta = JSON.parse(localStorage.getItem(OFFLINE_META_KEY) || "{}") || {}; } catch (e) { offlineMeta = {}; }
+function saveOfflineMeta(){ try { localStorage.setItem(OFFLINE_META_KEY, JSON.stringify(offlineMeta)); } catch (e) {} }
+
+/* One download queue for all stations: a single file every 3s,
+   cycling through the stations, until each has its 10. Slow on
+   purpose — the listener is hearing the live stream meanwhile. */
+var offQueue = [];
+var offQueueTimer = null;
+function buildOffQueue(){
+  offQueue = [];
+  stations.forEach(function(st){
+    var have = (offlineMeta[st.id] || []).length;
+    for (var i = have; i < OFFLINE_PER_STATION; i++) offQueue.push({ st: st, idx: i });
+  });
+}
+function pumpOffQueue(){
+  if (offQueueTimer) return;
+  offQueueTimer = setInterval(function(){
+    if (!navigator.onLine || document.visibilityState !== "visible"){ return; }
+    var job = offQueue.shift();
+    if (!job){ clearInterval(offQueueTimer); offQueueTimer = null; return; }
+    var st = job.st, url = baseOf(st) + "/track/" + st.id + "?n=" + job.idx;
+    if (!("caches" in window)) return;
+    caches.open(OFFLINE_CACHE).then(function(cache){
+      return cache.match(url).then(function(hit){
+        if (hit) return null;
+        return fetch(url).then(function(res){
+          if (!res || !res.ok) return null;
+          var name = "";
+          try { name = decodeURIComponent(res.headers.get("X-Track-Name") || ""); } catch (e) {}
+          var p = parseTrack(name);
+          return cache.put(url, res.clone()).then(function(){
+            return { key: url, title: p.title, artist: p.artist };
+          });
+        }).catch(function(){ return null; });
+      });
+    }).then(function(item){
+      if (!item) return;
+      var list = offlineMeta[st.id] || [];
+      list.push(item);
+      offlineMeta[st.id] = list;
+      saveOfflineMeta();
+    }).catch(function(){});
+  }, 3000);
+}
+function cacheOfflineTracks(){
+  if (!("caches" in window) || !navigator.onLine) return;
+  buildOffQueue();
+  pumpOffQueue();
+}
+/* Start caching a few seconds after load (the live streams get
+   the bandwidth first), and top up whenever the page comes back. */
+setTimeout(cacheOfflineTracks, 5000);
+document.addEventListener("visibilitychange", function(){
+  if (document.visibilityState === "visible") cacheOfflineTracks();
+});
+
+function playOffline(st){
+  /* Silence every other station first. */
+  stations.forEach(function(o){ if (o !== st && o.audio) o.audio.muted = true; });
+  var list = offlineMeta[st.id] || [];
+  st.offline = true;
+  st.offIdx = 0;
+  audibleId = st.id;
+  lastAudibleId = st.id;
+  st.card.classList.add("playing");
+  st.card.classList.add("offline");
+  st.card.classList.remove("connecting");
+  refreshPlayingClasses();
+  updateMediaSession();
+  if (!list.length){
+    showShareStatus("برای پخش آفلاین اول یک بار با اینترنت صفحه رو باز کن تا آهنگ‌ها دانلود بشن");
+    return;
+  }
+  playOfflineTrack(st);
+}
+function playOfflineTrack(st){
+  var list = offlineMeta[st.id] || [];
+  if (!list.length) return;
+  var item = list[(st.offIdx || 0) % list.length];
+  if (!("caches" in window)){ showShareStatus("مرورگرت حافظهٔ آفلاین رو پشتیبانی نمی‌کنه"); return; }
+  caches.open(OFFLINE_CACHE).then(function(cache){
+    return cache.match(item.key);
+  }).then(function(res){
+    if (!res){ st.offIdx = (st.offIdx || 0) + 1; playOfflineTrack(st); return; }
+    return res.blob();
+  }).then(function(blob){
+    if (!blob) return;
+    var url = URL.createObjectURL(blob);
+    var a = ensureAudio(st);
+    if (st.offUrl){ try { URL.revokeObjectURL(st.offUrl); } catch (e) {} }
+    st.offUrl = url;
+    st.offTitle = item.title;
+    st.offArtist = item.artist;
+    st.offDuration = 0;
+    try { a.pause(); } catch (e) {}
+    a.src = url;
+    a.muted = false;
+    a.load();
+    var p = a.play();
+    if (p && p.catch) p.catch(function(){});
+    st.card.classList.remove("connecting");
+    pollStation(st);
+  }).catch(function(){});
+}
+/* Connection lost / regained: say so once, and start caching again
+   the moment the connection is back. */
+function updateOnlineState(){
+  if (!navigator.onLine){
+    showShareStatus("آفلاین شدی — آهنگ‌های ذخیره‌شده پخش می‌شن");
+  } else {
+    cacheOfflineTracks();
+  }
+}
+window.addEventListener("online", updateOnlineState);
+window.addEventListener("offline", updateOnlineState);
+
+/* Offline shell: register the service worker so the page itself
+   opens with no connection (the worker caches the page document;
+   the songs are cached separately by the code above, never by the
+   worker — it never touches the live stream). */
+if ("serviceWorker" in navigator){
+  window.addEventListener("load", function(){
+    try { navigator.serviceWorker.register("sw.js").catch(function(){}); } catch (e) {}
+  });
+}
 
 /* ---------- open in Chrome + share / copy the Chrome link ----------
    The radio should open in the phone's Chrome, NOT in an app's
