@@ -40,6 +40,7 @@ import random
 import subprocess
 import threading
 import time
+import urllib.parse
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -466,6 +467,59 @@ def make_handler(broadcasters):
                     self._send_jsonp(payload, callback)
                 else:
                     self._send_json(payload)
+                return
+            if path.startswith("/track/"):
+                # Offline mode: serve ONE whole song file so the page
+                # can download and cache it on the phone. ?n=<index>
+                # picks the nth file on disk (sorted); no n = random.
+                # The song name travels in X-Track-Name so the page
+                # knows the song without a second request.
+                station = ALIASES.get(path[len("/track/"):], path[len("/track/"):])
+                b = broadcasters.get(station)
+                if b is None:
+                    self.send_response(404)
+                    self.end_headers()
+                    return
+                n = None
+                for part in query.split("&"):
+                    if part.startswith("n="):
+                        try:
+                            n = int(part[2:])
+                        except ValueError:
+                            n = None
+                        break
+                tracks = list_tracks(b.music_dirs)
+                if not tracks:
+                    self.send_response(404)
+                    self.end_headers()
+                    return
+                if n is None:
+                    fpath = random.choice(tracks)
+                else:
+                    if n < 0 or n >= len(tracks):
+                        self.send_response(404)
+                        self.end_headers()
+                        return
+                    fpath = tracks[n]
+                try:
+                    size = os.path.getsize(fpath)
+                    fname = os.path.basename(fpath)
+                    self.send_response(200)
+                    self.send_header("Content-Type", "audio/mpeg")
+                    self.send_header("Content-Length", str(size))
+                    self.send_header("Accept-Ranges", "bytes")
+                    self.send_header("Cache-Control", "public, max-age=86400")
+                    self.send_header("X-Track-Name", urllib.parse.quote(fname))
+                    self.send_header("X-Track-Count", str(len(tracks)))
+                    self.end_headers()
+                    with open(fpath, "rb") as fh:
+                        while True:
+                            chunk = fh.read(CHUNK)
+                            if not chunk:
+                                break
+                            self.wfile.write(chunk)
+                except (BrokenPipeError, ConnectionResetError):
+                    pass
                 return
             if path in ("", "/index.html"):
                 body = b"DJ BEHIX Radio - multi-station stream server"
