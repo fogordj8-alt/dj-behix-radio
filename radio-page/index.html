@@ -609,6 +609,7 @@ stations.forEach(function(st){
   st.anchor = null;       /* {abs, ct}: heard position vs audio clock */
   st._ct = -1;            /* last audio.currentTime seen at a poll */
   st._ctWall = 0;         /* when that currentTime was seen */
+  st._frozenSince = 0;    /* when the audio clock first froze (0 = not frozen) */
   st.dispKey = null;
   st.dispTitle = "";
   st.dispArtist = "";
@@ -682,13 +683,38 @@ function anchorStation(st){
   var ct = a.currentTime;
   if (!isFinite(ct)){ st.anchor = null; return; }
   var now = Date.now();
-  /* Distrust the audio clock if it is not actually advancing (some
-     browsers freeze currentTime on live streams): fall back to the
-     server clock instead of freezing the timer. */
+  /* The audio clock is not actually advancing (currentTime frozen).
+     Two very different causes, opposite fixes:
+     - The stream itself has stalled (no data arriving): the audio
+       the listener hears is stuck behind the server clock. Dropping
+       the anchor here would jump the timer forward to the server
+       position — AHEAD of the music, the exact fault reported.
+       Keep the frozen anchor instead: the timer stays where the
+       music is. Once data flows again the missed audio is gone, so
+       a fresh anchor from the server estimate is correct then —
+       and that happens naturally, because a data stall drops the
+       anchor (next case).
+     - Data is still arriving but the clock is frozen anyway (some
+       browsers freeze currentTime on live streams even while the
+       music plays): the clock lies, so the server estimate is the
+       better guide — but only after the freeze has lasted a while
+       (15s), because a short freeze with data arriving is almost
+       always a buffer stall, not the frozen-clock quirk. */
   if (st._ctWall && now - st._ctWall > 2000){
     var wallD = (now - st._ctWall) / 1000, ctD = ct - st._ct;
-    if (ctD < wallD * 0.5){ st._ct = ct; st._ctWall = now; st.anchor = null; return; }
+    if (ctD < wallD * 0.5){
+      st._ct = ct; st._ctWall = now;
+      if (Date.now() - (st.lastDataAt || 0) > 4000){
+        st.anchor = null; st._frozenSince = 0; return; /* stream dead: re-anchor on resume */
+      }
+      if (!st._frozenSince) st._frozenSince = now;
+      if (now - st._frozenSince > 15000){
+        st.anchor = null; st._frozenSince = 0; return; /* frozen-clock quirk: fall back to server */
+      }
+      return; /* buffer stall: keep the frozen anchor, timer stays with the music */
+    }
   }
+  st._frozenSince = 0;
   st._ct = ct; st._ctWall = now;
   var srvAbs = st.absBase + st.srvElapsed + (now - st.srvFetchedAt) / 1000;
   var heard = srvAbs - bufferedAhead(a) - STREAM_LAG_SEC;
