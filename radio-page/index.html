@@ -643,12 +643,16 @@ function fmt(sec){
    30s term made the heard position trail the real music by ~25s,
    which is exactly what listeners reported: the song changed and
    the name and timer were still on the previous track, then jumped
-   when the anchor snapped. 5s matches the post-fix delay, biased
-   a hair high so the timer may trail the music by a fraction but
-   never runs ahead of it. The client-side buffered-ahead seconds
-   are still subtracted separately (see bufferedAhead), so this
-   term covers only what the element cannot measure. */
-var STREAM_LAG_SEC = 5;
+   when the anchor snapped. 5s matches the post-fix delay on a fast
+   path, biased a hair high so the timer may trail the music by a
+   fraction but never runs ahead of it. On the listener's phone in
+   Iran (VPN + proxy path) the real delay is larger: measured
+   2026-11-23, both Afro and Gym timers ran 13s ahead of the music
+   with the 5s term, so the true delay there is ~18s. 18s = 5s + the
+   measured 13s. The client-side buffered-ahead seconds are still
+   subtracted separately (see bufferedAhead), so this term covers
+   only what the element cannot measure. */
+var STREAM_LAG_SEC = 18;
 /* Seconds of audio already delivered to this element but not yet
    played — measured on the buffered range that actually contains
    the playhead, not the last range (a fragmented buffer's last
