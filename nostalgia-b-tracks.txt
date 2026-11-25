@@ -551,3 +551,27 @@
 1094|Aref|Chera Amadi
 1095|Sattar|Bastare Tanhayee
 1096|Sattar|Gham Nameh
+1097|Siavash Ghomayshi|Hedieh
+1098|Moein|Khooneye Arezoo
+1099|Ebi|Shab Geryeh
+1100|Dariush|Faryad-e Zire Ab
+1101|Habib|Mard-e Tanhaye Shab
+1102|Hassan Shamaizadeh|Ojagh
+1103|Dariush|Yavar-e Hamisheh Momen
+1104|Homeyra|Alam-e Eshgh
+1105|Mahasti|Meykhooneh Bisharabeh
+1106|Dariush|Gelayeh
+1108|Dariush|Masloob
+1109|Hayedeh|Shurideh Sar
+1110|Mahasti|Dou Rangi
+1111|Ebi|Pooste Shab
+1112|Googoosh|Un Manam
+1113|Dariush|Shahre Gham
+1114|Kourosh Yaghmaei|Gole Yakh
+1115|Hayedeh|Gole Sangam
+1117|Fereidoon Foroughi|Koocheye Shahre Delam
+1118|Dariush|Donyaye In Roozaye Man
+1119|Hooshmand Aghili|Farda Tou Miayee
+1120|Mohammad Nouri|Jan-e Maryam
+1121|Googoosh|Jadeh
+1122|Siavash Ghomayshi|Elahi
